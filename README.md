@@ -14,16 +14,16 @@ What does this library do:
 * Bootstrap: we want to use Bootstrap as the base for our components. There are many other UI Frameworks based on Tailwind out there: this is boostrap-specific.
 * SCSS: sass is a dependency of this project. We will strive to use pure CSS whenever this is possible.
 * Rails-frontend agnostic: we don't want any dependency over ViewComponent or Phlex or other libraries, although we ❤️ them. We might still use those to provide some integration examples, but they are not a requirement.
-* Hotwire-ready: we will sue stimulus controllers to attach javascript behavior to our components. Stimulus is our guarantee that each component is hotwire-ready. 
+* Hotwire-ready: we will use stimulus controllers to attach javascript behavior to our components. Stimulus is our guarantee that each component is hotwire-ready. 
 
 ## What do you get with Rails Bootstrap UI?
 
-When you install rails_bootstrap_ui you get a bunch of SCSS files and stimulus controllers that you can use in your app to build your UI components.
+When you install rails-bootstrap-ui you get a bunch of SCSS files and stimulus controllers that you can use in your app to build your UI components.
 You can follow the examples in this Website to see how to use them or you can install Lookbook to see them in your very own app.
 
 ## Dependencies
 * We don't want any hard-dependency on the gem itself. You should not be forced to include libraries that you don't want to use. This means that:
-  * Lookbook is not included by default, but it's a separate gem. Install `rails_bootstrap_ui_lookbook` if you want to preview components in your app.
+  * Lookbook is not included by default, but it's a separate gem. Install `rails-bootstrap-ui-lookbook` if you want to preview components in your app.
   * Bootstrap is not included by default as a gem. You can decide yourself if you want to use sprockets or css-bundling to include it in your app.
   * Stimulus is not included by default. You can decide yourself if you want to use it in your app.
   * ViewComponent is not included by default. You can decide yourself if you want to use it in your app.
@@ -32,7 +32,7 @@ You can follow the examples in this Website to see how to use them or you can in
 ## Installation
 
 ```bash
-bundle add rails_bootstrap_ui
+bundle add rails-bootstrap-ui
 ```
 
 ## Usage
