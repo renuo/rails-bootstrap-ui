@@ -25,5 +25,19 @@ module RailsBootstrapUi
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.lookbook.project_name = "Rails Bootstrap Ui"
+
+    config.lookbook.debug_menu = true
+
+    config.lookbook.page_nav_filter = true
+
+    config.lookbook.preview_display_options = {
+      theme: ["light", "dark"]
+    }
+
+    config.lookbook.ui_theme = "green"
+
+    config.lookbook.default_preview_layout = "application"
   end
 end
