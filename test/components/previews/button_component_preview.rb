@@ -6,10 +6,10 @@ class ButtonComponentPreview < Lookbook::Preview
   # @param outline select { choices: [true, false] } "Outline button"
   # @param block select { choices: [true, false] } "Block button"
   def playground(title: "Placeholder", theme: "primary", state: "default", outline: false, block: false)
-    render "buttons/playground", title: title, theme: theme, state: state, outline: outline, block: block
+    render "components/buttons/playground", title: title, theme: theme, state: state, outline: outline, block: block
   end
 
   def themes
-    render "buttons/themes"
+    render "components/buttons/themes"
   end
 end
