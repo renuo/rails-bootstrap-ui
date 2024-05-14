@@ -30,4 +30,19 @@ class PagesTest < ActionView::TestCase
     assert_select "div.card", text: /Card Title/
     assert_select "div.card-body", count: 2
   end
+
+  test "visit the alerts themes page" do
+    render template: "components/alerts/_themes", layout: "layouts/application"
+
+    assert_select "div.alert"
+    assert_select "div.alert-primary"
+  end
+
+  test "visit the alerts playground page" do
+    render template: "components/alerts/_playground", layout: "layouts/application", locals: {title: "This is a alert", theme: "primary", link: false, dismissible: true, icon: false}
+
+    assert_select "div.alert-primary", text: /This is a alert/
+    assert_select "button.btn-close", count: 1
+    assert_select "img.alert-icon", count: 0
+  end
 end
