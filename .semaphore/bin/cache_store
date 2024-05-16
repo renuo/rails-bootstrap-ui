@@ -1,0 +1,31 @@
+#!/bin/sh
+
+for cache_group in "$@"
+do
+  case $cache_group in
+
+  rails)
+    cache store nvm-$SEMAPHORE_GIT_BRANCH-$(checksum .nvmrc) $HOME/.nvm
+    cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum .ruby-version)-$(checksum Gemfile.lock) vendor/bundle
+    cache store yarn-cache-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) $HOME/.cache/yarn
+    cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) node_modules
+    ;;
+
+  python)
+    cache store requirements-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt) .pip_cache
+    ;;
+
+  assets)
+    cache store packs-$SEMAPHORE_GIT_BRANCH public/packs
+    cache store packstest-$SEMAPHORE_GIT_BRANCH public/packs-test
+    cache store assets-$SEMAPHORE_GIT_BRANCH public/assets
+    cache store sprocketscache-$SEMAPHORE_GIT_BRANCH tmp/cache/assets/sprockets
+    cache store webpackercache-$SEMAPHORE_GIT_BRANCH tmp/cache/webpacker
+    ;;
+
+  *)
+    echo "Invalid argument: Cache group $cache_group not found."
+    exit 1
+    ;;
+  esac
+done
