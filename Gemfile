@@ -27,8 +27,6 @@ end
 group :development do
   gem 'rack-mini-profiler'
   gem 'web-console'
-  gem "listen"
-  gem "actioncable"
 end
 
 group :test do
