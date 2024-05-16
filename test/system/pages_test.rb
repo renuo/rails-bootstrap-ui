@@ -1,18 +1,22 @@
-require "test_helper"
+require "application_system_test_case"
 
-class PagesTest < ActionView::TestCase
+class PagesTest < ApplicationSystemTestCase
   test "visit the buttons themes page" do
-    render template: "components/buttons/_themes", layout: "layouts/application"
+    visit "/inspect/button/themes"
 
-    assert_select "button", text: "Primary"
-    assert_select "button", text: "Small button"
-    assert_select "button.active", text: "Active toggle button"
+    within_frame find("iframe") do
+      assert_selector "button", text: "Primary"
+      assert_selector "button", text: "Small button"
+      assert_selector "button.active", text: "Active toggle button"
+    end
   end
 
   test "visit the buttons playground page" do
-    render template: "components/buttons/_playground", layout: "layouts/application", locals: {title: "Primary", theme: "primary", state: "default", outline: false, block: false}
+    visit "/inspect/button/playground"
 
-    assert_select "button.btn-primary", text: "Primary"
-    assert_select "button.btn-primary.active", count: 0
+    within_frame find("iframe") do
+      assert_selector "button.btn-primary", text: "Placeholder"
+      assert_no_selector "button.btn-primary.active"
+    end
   end
 end
