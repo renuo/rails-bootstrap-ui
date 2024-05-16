@@ -1,5 +1,4 @@
 require "application_system_test_case"
-
 class PagesTest < ApplicationSystemTestCase
   test "visit the buttons themes page" do
     visit "/inspect/button/themes"

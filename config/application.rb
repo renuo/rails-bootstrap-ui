@@ -39,5 +39,7 @@ module RailsBootstrapUi
     config.lookbook.ui_theme = "green"
 
     config.lookbook.default_preview_layout = "application"
+
+    config.lookbook.preview_paths = ["app/components/previews"]
   end
 end
