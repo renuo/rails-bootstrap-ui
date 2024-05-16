@@ -49,8 +49,8 @@ blocks:
           - bundle config set deployment 'true'
           - bundle config set path 'vendor/bundle'
           - bundle install -j 4
-          - nvm install
-          - bin/yarn install --cache-folder ~/.cache/yarn
+#          - nvm install
+#          - bin/yarn install --cache-folder ~/.cache/yarn
       jobs:
         - name: linting
           commands:
@@ -73,8 +73,8 @@ blocks:
       secrets:
         - name: rails-bootstrap-ui
       env_vars:
-        - name: DATABASE_URL
-          value: postgresql://postgres@localhost/test?encoding=utf8
+#        - name: DATABASE_URL
+#          value: postgresql://postgres@localhost/test?encoding=utf8
         - name: RAILS_ENV
           value: test
       prologue:
@@ -107,10 +107,10 @@ blocks:
             - zip -r coverage-$SEMAPHORE_GIT_SHA coverage/
             - artifact push job --expire-in 2w coverage-$SEMAPHORE_GIT_SHA.zip
 promotions:
-  - name: develop
-    pipeline_file: develop-deploy.yml
-    auto_promote:
-      when: "result = 'passed' and branch = 'develop'"
+#  - name: develop
+#    pipeline_file: develop-deploy.yml
+#    auto_promote:
+#      when: "result = 'passed' and branch = 'develop'"
   - name: main
     pipeline_file: main-deploy.yml
     auto_promote:
