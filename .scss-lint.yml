@@ -2,6 +2,12 @@ files:
   include:
     - 'app/assets/stylesheets/**/*.scss'
     - 'app/javascript/**/*.scss'
+    - - 'node_modules/**/*'
+      - 'vendor/**/*'
+      - 'bundle/**/*'
+      - 'app/assets/stylesheets/bootstrap/**/*'
+      - 'app/assets/stylesheets/vendor/**/*'
+      - 'app/assets/stylesheets/gems/**/*'
   exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'

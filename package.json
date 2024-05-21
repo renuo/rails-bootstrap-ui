@@ -6,7 +6,6 @@
     "sass-lint": "^1.13.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.2.0",
     "globals": "^15.2.0"
   }
 }
