@@ -1,5 +1,12 @@
-scss_files:
-  - "app/assets/stylesheets/**/*.scss"
+files:
+  include:
+    - 'app/assets/stylesheets/**/*.scss'
+    - 'app/javascript/**/*.scss'
+  exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'app/assets/stylesheets/bootstrap/**/*'
+
 linters:
   NestingDepth:
     enabled: true
