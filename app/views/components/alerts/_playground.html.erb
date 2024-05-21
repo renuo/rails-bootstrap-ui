@@ -1,0 +1,9 @@
+<div class='alert alert-<%= theme %> d-flex align-items-center' role='alert'>
+  <% if icon %>
+    <%= image_tag 'alert.svg', class: 'alert-icon me-2', alt: 'Alert svg' %>
+<% end %>
+  <%= title %>
+  <% if dismissible %>
+    <button type='button' class='btn-close float-end' data-bs-dismiss='alert' aria-label='Close'></button>
+  <% end %>
+</div>
