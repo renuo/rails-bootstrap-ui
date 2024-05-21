@@ -14,7 +14,7 @@ echo "Executing: bundle exec brakeman -q -z --no-summary --no-pager"
 bundle exec brakeman -q -z --no-summary --no-pager
 
 echo "Executing: yarn sass-lint -v -q"
-yarn sass-lint -v -q
+yarn sass-lint -v -q 'app/assets/stylesheets/**/*.scss'
 
 echo "Executing: bundle exec erblint --config .erb-lint.yml --lint-all"
 bundle exec erblint --config .erb-lint.yml --lint-all
