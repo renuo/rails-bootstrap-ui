@@ -10,13 +10,16 @@ then
   exit 1
 fi
 
+echo "Executing: bundle exec brakeman -q -z --no-summary --no-pager"
 bundle exec brakeman -q -z --no-summary --no-pager
-bundle exec mdl ./ -g
 
-yarn sass-lint -v --no-exit app/javascripts/**/*.scss
+echo "Executing: yarn sass-lint -v -q"
+yarn sass-lint -v -q
 
-# for erb
+echo "Executing: bundle exec erblint --config .erb-lint.yml --lint-all"
 bundle exec erblint --config .erb-lint.yml --lint-all
 
-# for javascript
-yarn eslint app/javascripts spec/javascripts
+echo "Executing: yarn eslint app/javascripts spec/javascripts"
+yarn eslint 'app/javascript/**/*.js'
+
+

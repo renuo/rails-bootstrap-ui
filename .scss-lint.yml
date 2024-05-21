@@ -1,0 +1,6 @@
+scss_files:
+  - "app/assets/stylesheets/**/*.scss"
+linters:
+  NestingDepth:
+    enabled: true
+    max_depth: 5

@@ -3,7 +3,7 @@
 class ButtonComponentPreview < Lookbook::Preview
   # Interactive playground for experimenting with different button styles and states.
   # @param title "Button title"
-  # @param theme select { choices: [primary, secondary, danger, warning, info, light, dark, link] } "Default bootstrap themes"
+  # @param theme select { choices: theme_options } "Default bootstrap themes"
   # @param state select { choices: [default, active, disabled] } "Button state"
   # @param outline select { choices: [true, false] } "Outline button"
   # @param block select { choices: [true, false] } "Block button"
@@ -14,4 +14,13 @@ class ButtonComponentPreview < Lookbook::Preview
   def themes
     render 'components/buttons/themes'
   end
+end
+
+private
+
+def theme_options
+  {
+    choices: %i[primary secondary success danger warning info light dark],
+    include_blank: true
+  }
 end

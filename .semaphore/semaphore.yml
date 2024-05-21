@@ -28,8 +28,8 @@ blocks:
             - bundle config set deployment 'true'
             - bundle config set path 'vendor/bundle'
             - bundle install -j 4
-#            - nvm install
-#            - bin/yarn install --cache-folder ~/.cache/yarn
+            - nvm install
+            - bin/yarn install --cache-folder ~/.cache/yarn
             - source .semaphore/bin/cache_store rails
   - name: linting
     execution_time_limit:
@@ -49,8 +49,8 @@ blocks:
           - bundle config set deployment 'true'
           - bundle config set path 'vendor/bundle'
           - bundle install -j 4
-#          - nvm install
-#          - bin/yarn install --cache-folder ~/.cache/yarn
+          - nvm install
+          - bin/yarn install --cache-folder ~/.cache/yarn
       jobs:
         - name: linting
           commands:
@@ -85,8 +85,8 @@ blocks:
           - bundle config set deployment 'true'
           - bundle config set path 'vendor/bundle'
           - bundle install -j 4
-#          - nvm install
-#          - bin/yarn install --cache-folder ~/.cache/yarn
+          - nvm install
+          - bin/yarn install --cache-folder ~/.cache/yarn
 #          - sem-service start postgres
 #          - cp config/application.example.yml config/application.yml
 #          - bundle exec rails db:create db:schema:load
