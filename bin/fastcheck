@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -e
-
+echo "Executing: bundle exec rubocop -D -c .rubocop.yml --fail-fast"
 if ! bundle exec rubocop -D -c .rubocop.yml --fail-fast
 then
   echo 'rubocop detected issues!'
@@ -19,7 +19,7 @@ yarn sass-lint -v -q
 echo "Executing: bundle exec erblint --config .erb-lint.yml --lint-all"
 bundle exec erblint --config .erb-lint.yml --lint-all
 
-#echo "Executing: yarn eslint app/javascripts spec/javascripts"
+echo "Executing: yarn eslint app/javascripts spec/javascripts"
 yarn eslint 'app/javascript/**/*.js'
 
 

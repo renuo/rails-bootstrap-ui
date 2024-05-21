@@ -1,22 +1,12 @@
-files:
-  include:
-    - 'app/assets/stylesheets/**/*.scss'
-    - 'app/javascript/**/*.scss'
-    - - 'node_modules/**/*'
-      - 'vendor/**/*'
-      - 'bundle/**/*'
-      - 'app/assets/stylesheets/bootstrap/**/*'
-      - 'app/assets/stylesheets/vendor/**/*'
-      - 'app/assets/stylesheets/gems/**/*'
-  exclude:
-    - 'node_modules/**/*'
-    - 'vendor/**/*'
-    - 'bundle/**/*'
-    - 'app/assets/stylesheets/bootstrap/**/*'
-    - 'app/assets/stylesheets/vendor/**/*'
-    - 'app/assets/stylesheets/gems/**/*'
+scss_files: 'app/assets/stylesheets/**/*.css.scss'
 
 linters:
-  NestingDepth:
-    enabled: true
-    max_depth: 5
+  BorderZero:
+    enabled: false
+
+  Indentation:
+    severity: warning
+    width: 2
+
+  PropertySortOrder:
+    enabled: false
