@@ -4,6 +4,7 @@ files:
     - 'app/javascript/**/*.scss'
   exclude:
     - 'node_modules/**/*'
+    - 'vendor/**/*'
     - 'bundle/**/*'
     - 'app/assets/stylesheets/bootstrap/**/*'
     - 'app/assets/stylesheets/vendor/**/*'
