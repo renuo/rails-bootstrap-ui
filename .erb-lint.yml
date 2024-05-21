@@ -1,5 +1,5 @@
 ---
-glob: "**/app/views/**/*.{html,text,js}{+*,}.erb"
+glob: "app/views/**/*.{html,text,js}{+*,}.erb"
 EnableDefaultLinters: true
 linters:
   Rubocop:
