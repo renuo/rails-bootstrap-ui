@@ -20,6 +20,6 @@ echo "Executing: bundle exec erblint --config .erb-lint.yml --lint-all"
 bundle exec erblint --config .erb-lint.yml --lint-all
 
 #echo "Executing: yarn eslint app/javascripts spec/javascripts"
-#yarn eslint 'app/javascript/**/*.js'
+yarn eslint 'app/javascript/**/*.js'
 
 
