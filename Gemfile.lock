@@ -81,6 +81,13 @@ GEM
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     base64 (0.2.0)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.6)
     bindex (0.8.1)
     bootsnap (1.18.3)
@@ -88,6 +95,8 @@ GEM
     bootstrap (5.3.2)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
+    brakeman (6.1.2)
+      racc
     builder (3.2.4)
     capybara (3.40.0)
       addressable
@@ -115,6 +124,13 @@ GEM
       reline (>= 0.3.8)
     drb (2.2.0)
       ruby2_keywords
+    erb_lint (0.5.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
     erubi (1.12.0)
     execjs (2.9.1)
     globalid (1.2.1)
@@ -296,6 +312,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    smart_properties (1.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -359,9 +376,11 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.3.0)
+  brakeman
   capybara
   dartsass-sprockets
   debug
+  erb_lint
   importmap-rails
   lookbook
   puma (>= 5.0)

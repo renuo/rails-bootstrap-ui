@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+echo "Executing: bundle exec rubocop -D -c .rubocop.yml --fail-fast"
+if ! bundle exec rubocop -D -c .rubocop.yml --fail-fast
+then
+  echo 'rubocop detected issues!'
+  bundle exec rubocop -a -D -c .rubocop.yml
+  echo 'Tried to auto correct the issues, but must be reviewed manually, commit aborted'
+  exit 1
+fi
+
+echo "Executing: bundle exec brakeman -q -z --no-summary --no-pager"
+bundle exec brakeman -q -z --no-summary --no-pager
+
+echo "Executing: yarn sass-lint -v -q"
+yarn sass-lint -v -q 'app/assets/stylesheets/**/*.scss'
+
+echo "Executing: bundle exec erblint --config .erb-lint.yml --lint-all"
+bundle exec erblint --config .erb-lint.yml --lint-all
+
+echo "Executing: yarn eslint app/javascripts spec/javascripts"
+yarn eslint 'app/javascript/**/*.js'
+
+

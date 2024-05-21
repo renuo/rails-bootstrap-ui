@@ -1,10 +1,10 @@
 <% button_class = "#{outline ? 'btn-outline' : 'btn'}-#{theme}" %>
-<% button_class += " #{state}" unless state == "default" %>
+<% button_class += " #{state}" unless state == 'default' %>
 
 <% content_for :button do %>
-  <button type="button" class="btn <%= button_class %>">
+  <button type='button' class="btn <%= button_class %>">
     <%= title %>
   </button>
 <% end %>
 
-<%= block ? content_tag(:div,"\n".html_safe + yield(:button), class: "d-grid") : yield(:button) %>
+<%= block ? content_tag(:div, "\n".html_safe + yield(:button), class: 'd-grid') : yield(:button) %>

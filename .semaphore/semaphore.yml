@@ -1,0 +1,117 @@
+version: "v1.0"
+name: rails-bootstrap-ui
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+auto_cancel:
+  running:
+    when: "true"
+fail_fast:
+  cancel:
+    when: "branch != 'main'"
+
+blocks:
+  - name: cache
+    execution_time_limit:
+      minutes: 10
+    dependencies: []
+    task:
+      secrets:
+        - name: rails-bootstrap-ui
+      jobs:
+        - name: cache
+          commands:
+            - checkout --use-cache
+            - gem update --system --no-document
+            - source .semaphore/bin/cache_restore rails
+            - bundle config set deployment 'true'
+            - bundle config set path 'vendor/bundle'
+            - bundle install -j 4
+            - nvm install
+            - bin/yarn install --cache-folder ~/.cache/yarn
+            - source .semaphore/bin/cache_store rails
+  - name: linting
+    execution_time_limit:
+      minutes: 5
+    dependencies: ['cache']
+    task:
+      secrets:
+        - name: rails-bootstrap-ui
+      env_vars:
+        - name: RAILS_ENV
+          value: test
+      prologue:
+        commands:
+          - checkout --use-cache
+          - gem update --system --no-document
+          - source .semaphore/bin/cache_restore rails
+          - bundle config set deployment 'true'
+          - bundle config set path 'vendor/bundle'
+          - bundle install -j 4
+          - nvm install
+          - bin/yarn install --cache-folder ~/.cache/yarn
+      jobs:
+        - name: linting
+          commands:
+            - bin/fastcheck
+      epilogue:
+        on_fail:
+          commands:
+            - mkdir -p log
+            - mkdir -p tmp/screenshots
+            - mkdir -p coverage
+            - artifact push job --expire-in 2w log
+            - artifact push job --expire-in 2w tmp/screenshots
+            - zip -r coverage-$SEMAPHORE_GIT_SHA coverage/
+            - artifact push job --expire-in 2w coverage-$SEMAPHORE_GIT_SHA.zip
+  - name: tests
+    execution_time_limit:
+      minutes: 10
+    dependencies: ['cache']
+    task:
+      secrets:
+        - name: rails-bootstrap-ui
+      env_vars:
+#        - name: DATABASE_URL
+#          value: postgresql://postgres@localhost/test?encoding=utf8
+        - name: RAILS_ENV
+          value: test
+      prologue:
+        commands:
+          - checkout --use-cache
+          - gem update --system --no-document
+          - source .semaphore/bin/cache_restore rails
+          - bundle config set deployment 'true'
+          - bundle config set path 'vendor/bundle'
+          - bundle install -j 4
+          - nvm install
+          - bin/yarn install --cache-folder ~/.cache/yarn
+#          - sem-service start postgres
+#          - cp config/application.example.yml config/application.yml
+#          - bundle exec rails db:create db:schema:load
+      jobs:
+        - name: tests
+          commands:
+            - bin/check
+      epilogue:
+        on_fail:
+          commands:
+            - mkdir -p log
+            - mkdir -p tmp/screenshots
+            - mkdir -p tmp/capybara
+            - mkdir -p coverage
+            - artifact push job log --expire-in 2w
+            - artifact push job tmp/screenshots --expire-in 2w
+            - artifact push job tmp/capybara --expire-in 2w
+            - zip -r coverage-$SEMAPHORE_GIT_SHA coverage/
+            - artifact push job --expire-in 2w coverage-$SEMAPHORE_GIT_SHA.zip
+promotions:
+#  - name: develop
+#    pipeline_file: develop-deploy.yml
+#    auto_promote:
+#      when: "result = 'passed' and branch = 'develop'"
+  - name: main
+    pipeline_file: main-deploy.yml
+    auto_promote:
+      when: "result = 'passed' and branch = 'main'"

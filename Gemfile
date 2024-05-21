@@ -22,6 +22,8 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
+  gem 'brakeman', require: false
+  gem 'erb_lint', require: false
 end
 
 group :development do

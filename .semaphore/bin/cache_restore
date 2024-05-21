@@ -1,0 +1,31 @@
+#!/bin/sh
+
+for cache_group in "$@"
+do
+  case $cache_group in
+
+  rails)
+    cache restore "nvm-$SEMAPHORE_GIT_BRANCH-$(checksum .nvmrc),nvm-$SEMAPHORE_GIT_BRANCH,nvm-develop"
+    cache restore "gems-$SEMAPHORE_GIT_BRANCH-$(checksum .ruby-version)-$(checksum Gemfile.lock),gems-develop-$(checksum .ruby-version)-$(checksum Gemfile.lock),gems-develop-$(checksum .ruby-version)"
+    cache restore "yarn-cache-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),yarn-cache-$SEMAPHORE_GIT_BRANCH,yarn-cache-develop"
+    cache restore "node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-develop"
+    ;;
+
+  python)
+    cache restore "requirements-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt),requirements-$SEMAPHORE_GIT_BRANCH,requirements-develop"
+    ;;
+
+  assets)
+    cache restore "packs-$SEMAPHORE_GIT_BRANCH,packs-develop"
+    cache restore "packstest-$SEMAPHORE_GIT_BRANCH,packstest-develop"
+    cache restore "assets-$SEMAPHORE_GIT_BRANCH,assets-develop"
+    cache restore "sprocketscache-$SEMAPHORE_GIT_BRANCH,sprocketscache-develop"
+    cache restore "webpackercache-$SEMAPHORE_GIT_BRANCH,webpackercache-develop"
+    ;;
+
+  *)
+    echo "Invalid argument: Cache group $cache_group not found."
+    exit 1
+    ;;
+  esac
+done
