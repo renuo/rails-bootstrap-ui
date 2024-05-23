@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class AlertComponentPreview < Lookbook::Preview
+  include LookbookHelper
   # Interactive playground for experimenting with different alert styles and states.
   # @param title "Alert title"
-  # @param theme select :helpers.theme_choices
+  # @param theme select :theme_choices
   # @param link toggle "With link"
   # @param dismissible toggle "Dismissible alert"
   # @param icon toggle "With icon"

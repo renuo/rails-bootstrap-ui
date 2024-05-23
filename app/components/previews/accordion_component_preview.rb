@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AccordionComponentPreview < Lookbook::Preview
+  include LookbookHelper
   # Interactive playground for experimenting with different alert styles and states.
   # @param title "Accordion title"
   # @param body "Accordion body"
