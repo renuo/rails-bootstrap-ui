@@ -54,4 +54,20 @@ class PagesTest < ApplicationSystemTestCase
       assert_selector 'div.accordion'
     end
   end
+
+  test 'visit the badges themes page' do
+    visit '/inspect/badge/themes'
+
+    within_frame find('iframe') do
+      assert_selector 'span.badge.text-bg-primary'
+    end
+  end
+
+  test 'visit the badges playground page' do
+    visit '/inspect/badge/playground'
+
+    within_frame find('iframe') do
+      assert_selector 'span.badge.bg-danger'
+    end
+  end
 end

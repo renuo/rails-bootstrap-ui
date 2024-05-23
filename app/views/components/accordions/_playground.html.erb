@@ -1,14 +1,5 @@
-<% if always_open == false %>
-  <% open = 'data-bs-parent="#accordionExample"' %>
-<% else %>
-  <% open = '' %>
-<% end %>
-
-<% if change_style == false %>
-  <% style = '' %>
-<% else %>
-  <% style = 'accordion-flush' %>
-<% end %>
+<% open = always_open ? '' : 'data-bs-parent="#accordionExample"' %>
+<% style = change_style ? 'accordion-flush' : '' %>
 
 <div class="accordion <%= style %>" id="accordionExample">
   <div class="accordion-item">

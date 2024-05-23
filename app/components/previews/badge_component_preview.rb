@@ -6,12 +6,12 @@ class BadgeComponentPreview < Lookbook::Preview
   # @param title "Badge title"
   # @param body "Badge body"
   # @param theme select :theme_choices
-  # @param always_open toggle "Change badge behavior to not collapse when clicking another"
   # @param change_style toggle "Change badge style"
+  # @param inline toggle "Inline badge"
   # @source ../../../app/views/components/badges/_playground.html.erb
 
-  def playground(title: 'Title', body: 'Badge body text', theme: 'primary', always_open: false, change_style: false)
-    render 'components/badges/playground', title:, body:, theme:, always_open:, change_style:
+  def playground(title: 'Title', body: '+99', theme: 'danger', change_style: false, inline: false)
+    render 'components/badges/playground', title:, body:, theme:, change_style:, inline:
   end
 
   # @source ../../../app/views/components/badges/_themes.html.erb
