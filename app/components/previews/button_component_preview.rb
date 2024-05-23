@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#
+
 class ButtonComponentPreview < Lookbook::Preview
   # Interactive playground for experimenting with different button styles and states.
   # @param title "Button title"

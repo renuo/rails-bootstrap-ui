@@ -4,14 +4,12 @@ class AccordionComponentPreview < Lookbook::Preview
   # Interactive playground for experimenting with different alert styles and states.
   # @param title "Accordion title"
   # @param body "Accordion body"
-  # @param theme select :helpers.theme_choices
-  # @param link toggle "With link"
-  # @param dismissible toggle "Dismissible alert"
-  # @param icon toggle "With icon"
+  # @param always_open toggle "Change accordion behavior to not collapse when clicking another"
+  # @param change_style toggle "Change accordion style"
   # @source ../../../app/views/components/accordions/_playground.html.erb
 
-  def playground(title: 'Title', body: 'Accordion body text', theme: 'primary', link: false, dismissible: false, icon: false)
-    render 'components/accordions/playground', title:, body:, theme:, link:, dismissible:, icon:
+  def playground(title: 'Title', body: 'Accordion body text', always_open: false, change_style: false)
+    render 'components/accordions/playground', title:, body:, always_open:, change_style:
   end
 
   # @source ../../../app/views/components/accordions/_themes.html.erb
@@ -19,4 +17,3 @@ class AccordionComponentPreview < Lookbook::Preview
     render 'components/accordions/themes'
   end
 end
-

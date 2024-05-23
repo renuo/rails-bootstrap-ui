@@ -38,4 +38,20 @@ class PagesTest < ApplicationSystemTestCase
       assert_no_selector 'button.close'
     end
   end
+
+  test 'visit the accordions themes page' do
+    visit '/inspect/accordion/themes'
+
+    within_frame find('iframe') do
+      assert_selector 'div.accordion.accordion-flush'
+    end
+  end
+
+  test 'visit the accordions playground page' do
+    visit '/inspect/accordion/playground'
+
+    within_frame find('iframe') do
+      assert_selector 'div.accordion'
+    end
+  end
 end
