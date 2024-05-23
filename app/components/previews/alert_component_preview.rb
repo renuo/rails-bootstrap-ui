@@ -7,13 +7,13 @@ class AlertComponentPreview < Lookbook::Preview
   # @param link toggle "With link"
   # @param dismissible toggle "Dismissible alert"
   # @param icon toggle "With icon"
-  # :source(alerts, _playground)
+  # @source ../../../app/views/components/alerts/_playground.html.erb
 
   def playground(title: 'This is a alert', theme: 'primary', link: false, dismissible: false, icon: false)
     render 'components/alerts/playground', title:, theme:, link:, dismissible:, icon:
   end
 
-  # :source(alerts, _themes)
+  # @source ../../../app/views/components/alerts/_themes.html.erb
   def themes
     render 'components/alerts/themes'
   end
