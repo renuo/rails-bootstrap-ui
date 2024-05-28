@@ -1,0 +1,27 @@
+<div class="card p-4 rounded-4 border-0 bg-success" style="width: 100%">
+  <div class="row">
+    <div class="col-8 d-flex flex-column">
+      <div class="d-inline-flex align-items-center bg-primary text-white  rounded-pill mb-3">Go somewhere</div>
+      <div class="card-body d-flex flex-column flex-grow-1 p-0">
+        <h1 class="card-title text-white">Card Title</h1>
+        <div class="row mt-auto">
+          <div class="col-1">
+            <%= image_tag "staff_portrait.png", class: "rounded w-100", alt: "Placeholder Image" %>
+          </div>
+          <div class="col d-flex flex-column justify-content-end">
+            <p class="card-text mb-0 text-white">Author <b>Name</b></p>
+            <p class="card-text text-white"><%= Date.today %></p>
+          </div>
+          <div class="col-auto mt-auto">
+            <div class="d-inline-flex align-items-center bg-opacity-87 bg-success text-opacity-37 text-success rounded-pill" style="padding: .5rem 1rem;">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <%= image_tag "example_image.avif", class: "w-100 h-100 rounded-4 border-0", alt: "Placeholder Image" %>
+    </div>
+  </div>
+</div>
