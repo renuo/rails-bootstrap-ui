@@ -1,14 +1,32 @@
-<div class="card p-4 border-none" style="width: <%= width %>">
+<div class="card p-4 rounded-4 border-0 bg-<%= theme %> w-<%= width %>">
   <div class="row">
-    <div class="col-9">
-      <div class="pill-wrapper pill-fs-small pill-thin mb-3">Go somewhere</div>
-      <div class="card-body">
-        <h5 class="card-title"><%= title %></h5>
-        <p class="card-text"><%= body %></p>
+    <div class="col-lg-8 d-flex flex-column">
+      <div>
+        <div class="d-inline-flex bg-<%= button_theme %> text-success rounded-pill mb-3 px-2">Go somewhere</div>
+      </div>
+      <div class="d-flex d-lg-none py-3">
+        <%= image_tag "example_image.avif", class: "w-100 h-100 rounded-4 border-0", alt: "Placeholder Image" %>
+      </div>
+      <div class="card-body d-flex flex-column flex-grow-1 p-0">
+        <h1 class="card-title text-white"><%= title %></h1>
+        <div class="row mt-auto">
+          <div class="col-2 col-md-1 pe-0">
+            <%= image_tag "staff_portrait.png", class: "rounded-2 w-75", alt: "Placeholder Image" %>
+          </div>
+          <div class="col mt-auto ps-0 ps-lg-1">
+            <p class="card-text mb-0 text-white">Von <b><%= name %></b></p>
+            <p class="card-text text-white"><%= Date.today %></p>
+          </div>
+          <div class="col-auto mt-auto">
+            <div class="bg-<%= button_theme %> text-success rounded-pill py-1 px-2">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-3">
-      <%= image_tag "example_image.avif", class: "card-img-top rounded-5", alt: "Placeholder Image" %>
+    <div class="col-lg-4 d-none d-lg-flex">
+      <%= image_tag "example_image.avif", class: "w-100 rounded-4 border-0", alt: "Placeholder Image" %>
     </div>
   </div>
 </div>
