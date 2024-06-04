@@ -1,43 +1,126 @@
-<div class="card p-4 rounded-4 border-0 bg-success w-100" style="transition: transform 0.3s ease;">
-  <div class="row">
-    <div class="col-lg-8 d-flex flex-column">
-      <div>
-        <div class="d-inline-flex bg-white text-success rounded-pill mb-3 px-2">Go somewhere</div>
-      </div>
-      <div class="d-flex d-lg-none py-3">
-        <%= image_tag "example_image.avif", class: "w-100 h-100 rounded-4 border-0", alt: "Placeholder Image" %>
-      </div>
-      <div class="card-body d-flex flex-column flex-grow-1 p-0">
-        <h1 class="card-title text-white">Card Title</h1>
-        <div class="row mt-auto">
-          <div class="col-2 col-md-1 pe-0">
-            <%= image_tag "staff_portrait.png", class: "rounded-2 w-75", alt: "Placeholder Image" %>
-          </div>
-          <div class="col mt-auto ps-0 ps-lg-1">
-            <p class="card-text mb-0 text-white">Von <b>Name</b></p>
-            <p class="card-text text-white"><%= Date.today %></p>
-          </div>
-          <div class="col-auto mt-auto">
-            <div class="bg-white text-success rounded-pill py-1 px-2">
-              <i class="fa-solid fa-arrow-right" style="transition: padding 0.3s ease;"></i>
+<div class='mb-5'>
+  <div class='card p-4 rounded-4 border-0 bg-primary w-100 position-relative' id='renuo-card'>
+    <div class='bg-primary rounded-4 z-index-0 position-absolute start-0 top-0 w-100 h-100' id='renuo-card-bg'></div>
+    <div class='row position-relative z-index-1'>
+      <div class='col-lg-8 d-flex flex-column'>
+        <div>
+          <div class='d-inline-flex bg-white text-primary rounded-pill mb-3 px-2'>Go somewhere</div>
+        </div>
+        <div class='d-flex d-lg-none py-3'>
+          <%= image_tag 'example_image.avif', class: 'w-100 h-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+        </div>
+        <div class='card-body d-flex flex-column flex-grow-1 p-0'>
+          <h1 class='card-title text-white'>Card Title</h1>
+          <div class='row mt-auto'>
+            <div class='col-2 col-md-1 pe-0'>
+              <%= image_tag 'staff_portrait.png', class: 'rounded-2 w-75', alt: 'Placeholder Image' %>
+            </div>
+            <div class='col mt-auto ps-0 ps-lg-1'>
+              <p class='card-text mb-0 text-white'>Von <b>Name</b></p>
+              <p class='card-text text-white'><%= Time.zone.today %></p>
+            </div>
+            <div class='col-auto mt-auto'>
+              <div class='bg-white text-primary rounded-pill py-1 px-2'>
+                <i class='fa-solid fa-arrow-right' id='button-arrow'></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class='col-lg-4 d-none d-lg-flex'>
+        <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+      </div>
     </div>
-    <div class="col-lg-4 d-none d-lg-flex">
-      <%= image_tag "example_image.avif", class: "w-100 rounded-4 border-0", alt: "Placeholder Image" %>
+  </div>
+</div>
+
+<div class="row mb-5">
+  <div class="col">
+    <div class='card bg-dark rounded-4' id='image-card'>
+      <div class='card-body text-white pb-4'>
+        <h5 class='card-subtitle mb-1 mt-1'>Card subtitle</h5>
+        <h6 class='card-subtitle mb-2 text-secondary'>Info</h6>
+        <h4 class='card-title'>Card title</h4>
+        <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class='card border-0' id='image-card'>
+      <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+      <div class="card-img-overlay d-flex justify-content-center align-items-end">
+        <div class='row card-body rounded-3 p-1 align-items-center' id='blurred-background'>
+          <h6 class='col card-subtitle text-white'>Card subtitle</h6>
+          <button type="button" class="col rounded-5 text-white border-0" id='blurred-background-button'>Success</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-    .card:hover {
-        transform: scale(1.05);
+    /*renuo card*/
+    #renuo-card-bg {
+        transition: transform 0.3s ease;
+    }
 
-        .fa-solid {
+    #button-arrow {
+        transition: padding 0.3s ease;
+    }
+
+    #renuo-card:hover {
+        #button-arrow {
             padding-left: 0.5rem !important;
             padding-right: 0.5rem !important;
         }
+
+        #renuo-card-bg {
+            transform: scale(1.05);
+        }
+    }
+
+    /*image card*/
+
+    #image-card {
+        transition: transform 0.4s ease;
+        width: 18rem;
+    }
+
+    #image-card:hover {
+        transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+    }
+    #blurred-background {
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    #blurred-background-button {
+        background-color: rgba(0, 0, 0, 0.3);
     }
 </style>
+
+<script>
+    /*image-card script for tilting*/
+    const cards = document.querySelectorAll('#image-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element.
+            const y = e.clientY - rect.top;  // y position within the element.
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / centerY * -10; // Adjust tilt effect strength as needed
+            const rotateY = (x - centerX) / centerX * 10; // Adjust tilt effect strength as needed
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
+    });
+</script>

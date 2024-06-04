@@ -68,6 +68,20 @@ class PagesTest < ApplicationSystemTestCase
 
     within_frame find('iframe') do
       assert_selector 'span.badge.text-bg-danger'
+
+  test 'visit the cards themes page' do
+    visit '/inspect/card/themes'
+
+    within_frame find('iframe') do
+      assert_selector 'div.card', text: 'Card Title'
+    end
+  end
+
+  test 'visit the cards playground page' do
+    visit '/inspect/card/playground'
+
+    within_frame find('iframe') do
+      assert_selector 'div.card', text: 'Max Muster'
     end
   end
 

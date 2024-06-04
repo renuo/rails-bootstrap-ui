@@ -8,10 +8,12 @@ class CardComponentPreview < Lookbook::Preview
   # @param width  select {choices: [25, 50, 75, 100]} "Card width"
   # @param theme select { choices: theme_options } "Card Background themes"
   # @param button_theme select { choices: theme_options } "Button themes"
+  # @source ../../../app/views/components/cards/_playground.html.erb
   def playground(title: 'Title', name: 'Max Muster', theme: 'success', width: '100', button_theme: 'white')
     render 'components/cards/playground', title:, name:, theme:, width:, button_theme:
   end
 
+  # @source ../../../app/views/components/cards/_themes.html.erb
   def themes
     render 'components/cards/themes'
   end
