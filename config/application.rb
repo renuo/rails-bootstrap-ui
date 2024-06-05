@@ -52,7 +52,6 @@ module RailsBootstrapUi
                                      Rails.root.join("app/javascript/controllers/#{base_name}_controller.js"),
                                      Rails.root.join("app/assets/stylesheets/_#{base_name}.scss")
                                    ]
-                                   asset_files.each { |path| puts "Checking: #{path}" }
                                    existing_files = asset_files.select { |path| File.exist?(path) }
                                    assets = existing_files.map { |path| Pathname.new(path) }
                                    { assets: assets }
