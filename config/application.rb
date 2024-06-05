@@ -41,5 +41,43 @@ module RailsBootstrapUi
     config.lookbook.default_preview_layout = 'application'
 
     config.lookbook.preview_paths = ['app/components/previews']
+
+    Lookbook.add_panel("assets", "panels/assets", {
+      label: "Assets",
+      locals: lambda do |data|
+        # Use lookup_path instead of deprecated path
+        preview_path = data.preview.lookup_path
+
+        # Debug: Print the preview path
+        puts "Preview Path: #{preview_path}"
+
+        # Derive the base name from the preview path
+        preview_name = File.basename(preview_path, '.rb')
+        base_name = preview_name.gsub('_preview', '')
+
+        # Debug: Print base name
+        puts "Base Name: #{base_name}"
+
+        asset_files = [
+          Rails.root.join("app/javascript/controllers/#{base_name}_controller.js"),
+          Rails.root.join("app/assets/stylesheets/_#{base_name}.scss")
+        ]
+
+        # Debug: Print asset file paths
+        asset_files.each { |path| puts "Checking: #{path}" }
+
+        existing_files = asset_files.select { |path| File.exist?(path) }
+
+        # Debug: Print existing files
+        existing_files.each { |path| puts "Found: #{path}" }
+
+        assets = existing_files.map { |path| Pathname.new(path) }
+
+        # Debug: Print final assets array
+        puts "Assets: #{assets.inspect}"
+
+        { assets: assets }
+      end
+    })
   end
 end
