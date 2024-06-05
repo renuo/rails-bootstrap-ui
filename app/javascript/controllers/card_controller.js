@@ -1,10 +1,10 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static targets = ["card"];
+  static targets = ['card'];
 
   connect() {
-    this.cardTargets.forEach(card => {
+    this.cardTargets.forEach((card) => {
       card.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
       card.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
     });
@@ -19,8 +19,8 @@ export default class extends Controller {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = (y - centerY) / centerY * -10;
-    const rotateY = (x - centerX) / centerX * 10;
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
 
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   }
@@ -30,4 +30,3 @@ export default class extends Controller {
     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
   }
 }
-

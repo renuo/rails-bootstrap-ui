@@ -1,7 +1,7 @@
 <div data-controller="card">
   <div class='mb-5'>
-    <div class='card p-4 rounded-4 border-0 bg-primary w-100 position-relative' id='renuo-card'>
-      <div class='bg-primary rounded-4 z-index-0 position-absolute start-0 top-0 w-100 h-100' id='renuo-card-bg'></div>
+    <div class='card p-4 rounded-4 border-0 bg-primary w-100 position-relative renuo-card'>
+      <div class='bg-primary rounded-4 z-index-0 position-absolute start-0 top-0 w-100 h-100 renuo-card-bg'></div>
       <div class='row position-relative z-index-1'>
         <div class='col-lg-8 d-flex flex-column'>
           <div>
@@ -22,7 +22,7 @@
               </div>
               <div class='col-auto mt-auto'>
                 <div class='bg-white text-primary rounded-pill py-1 px-2'>
-                  <i class='fa-solid fa-arrow-right' id='button-arrow'></i>
+                  <i class='fa-solid fa-arrow-right button-arrow'></i>
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@
 
   <div class="row mb-5">
     <div class="col">
-      <div class='card bg-dark rounded-4' id='image-card' data-card-target="card">
+      <div class='card bg-dark rounded-4 image-card' data-card-target="card">
         <div class='card-body text-white pb-4'>
           <h5 class='card-subtitle mb-1 mt-1'>Card subtitle</h5>
           <h6 class='card-subtitle mb-2 text-secondary'>Info</h6>
@@ -48,12 +48,12 @@
     </div>
 
     <div class="col">
-      <div class='card border-0' id='image-card' data-card-target="card">
+      <div class='card border-0 image-card' data-card-target="card">
         <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
         <div class="card-img-overlay d-flex justify-content-center align-items-end">
-          <div class='row card-body rounded-3 p-1 align-items-center' id='blurred-background'>
+          <div class='row card-body rounded-3 p-1 align-items-center blurred-background'>
             <h6 class='col card-subtitle text-white'>Card subtitle</h6>
-            <button type="button" class="col rounded-5 text-white border-0" id='blurred-background-button'>Success</button>
+            <button type="button" class="col rounded-5 text-white border-0 blurred-background-button">Success</button>
           </div>
         </div>
       </div>

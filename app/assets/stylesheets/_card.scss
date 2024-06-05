@@ -1,39 +1,42 @@
 //renuo card
+$blurred-color-1: rgba(0, 0, 0, .1);
+$blurred-color-2: rgba(0, 0, 0, .3);
 
-#renuo-card-bg {
-  transition: transform 0.3s ease;
+.renuo-card-bg {
+  transition: transform .3s ease;
 }
 
-#button-arrow {
-  transition: padding 0.3s ease;
+.button-arrow {
+  transition: padding .3s ease;
 }
 
-#renuo-card:hover {
-  #button-arrow {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
+.renuo-card:hover {
+  .button-arrow {
+    padding-left: .5rem;
+    padding-right: .5rem;
   }
 
-  #renuo-card-bg {
+  .renuo-card-bg {
     transform: scale(1.05);
   }
 }
 
 //image card
 
-#image-card {
-  transition: transform 0.4s ease;
+.image-card {
+  transition: transform .4s ease;
   width: 18rem;
 }
 
-#image-card:hover {
+.image-card:hover {
   transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
 }
-#blurred-background {
-  background-color: rgba(0, 0, 0, 0.1);
+
+.blurred-background {
   backdrop-filter: blur(5px);
+  background-color: $blurred-color-1;
 }
 
-#blurred-background-button {
-  background-color: rgba(0, 0, 0, 0.3);
+.blurred-background-button {
+  background-color: $blurred-color-2;
 }
