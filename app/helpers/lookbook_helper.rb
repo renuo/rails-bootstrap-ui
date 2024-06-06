@@ -4,7 +4,7 @@ module LookbookHelper
   def theme_choices
     {
       choices: %w[primary secondary danger warning info light dark],
-      description: 'Default bootstrap themes'
+      description: 'Default bootstrap theme colours'
     }
   end
 end
