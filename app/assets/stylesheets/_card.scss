@@ -24,12 +24,14 @@ $blurred-color-2: rgba(0, 0, 0, .3);
 //image card
 
 .image-card {
-  transition: transform .4s ease;
+  transition: transform .3s ease;
   width: 18rem;
 }
 
-.image-card:hover {
-  transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+.overlay-card {
+  height: 15rem;
+  transition: transform .3s ease;
+  width: 15rem;
 }
 
 .blurred-background {
@@ -40,3 +42,4 @@ $blurred-color-2: rgba(0, 0, 0, .3);
 .blurred-background-button {
   background-color: $blurred-color-2;
 }
+

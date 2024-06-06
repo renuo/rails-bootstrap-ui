@@ -1,49 +1,19 @@
-<style>
-    p {
-        font-size: 1rem
-    }
-    p a {
-        text-decoration: underline;
-    }
-    .asset-preview + .asset-preview {
-        margin-top: 30px;
-    }
-    .asset-header {
-        display: flex;
-        align-items: center;
-        padding-left: 4px;
-        padding-right: 4px;
-        margin-bottom: 6px;
-    }
-
-    .asset-title {
-        font-size: 12px;
-        opacity: 0.75;
-    }
-    .asset-contents {
-        background: #fff;
-        overflow: hidden;
-        border-radius: 6px;
-        border: 1px solid grey;
-    }
-    .no-assets {
-        opacity: 0.7;
-        text-align: center;
-        line-height: 1.6;
-        padding: 30px;
-    }
-</style>
+<%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+<script src='https://kit.fontawesome.com/328ac1243c.js' crossorigin='anonymous' defer='true'></script>
+<%= javascript_importmap_tags %>
 
 <div class="lookbook-panel">
-
   <% if assets.any? %>
     <% assets.each do |asset| %>
       <div class="asset-preview">
         <header class="asset-header">
           <h4 class="asset-title font-mono"><%= asset.basename %></h4>
         </header>
-        <div class="asset-contents">
-          <%= code language: Lookbook::Lang.guess(asset, :ruby)[:name], line_numbers: true do %><%== File.read(asset) %><% end %>
+        <div data-controller="clipboard" class="asset-contents">
+          <i class="fa-regular fa-copy float-end m-4 copy-icon" data-action="click->clipboard#copy"></i>
+          <%= code language: Lookbook::Lang.guess(asset, :ruby)[:name], line_numbers: false do %>
+            <%== File.read(asset) %>
+          <% end %>
         </div>
       </div>
     <% end %>

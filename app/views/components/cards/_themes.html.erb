@@ -39,21 +39,21 @@
     <div class="col">
       <div class='card bg-dark rounded-4 image-card' data-card-target="card">
         <div class='card-body text-white pb-4'>
-          <h5 class='card-subtitle mb-1 mt-1'>Card subtitle</h5>
-          <h6 class='card-subtitle mb-2 text-secondary'>Info</h6>
+          <h6 class='card-subtitle mb-1 mt-1'>Card text</h6>
+          <p class='card-subtitle mb-2 text-secondary'>Info</p>
           <h4 class='card-title'>Card title</h4>
           <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
         </div>
       </div>
     </div>
 
-    <div class="col">
-      <div class='card border-0 image-card' data-card-target="card">
-        <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+    <div class="col mt-5 mt-md-0">
+      <div class='card border-0 overlay-card' data-card-target="card">
+        <%= image_tag 'example_image.avif', class: 'w-100 h-100 rounded-4 border-0', alt: 'Placeholder Image' %>
         <div class="card-img-overlay d-flex justify-content-center align-items-end">
-          <div class='row card-body rounded-3 p-1 align-items-center blurred-background'>
-            <h6 class='col card-subtitle text-white'>Card subtitle</h6>
-            <button type="button" class="col rounded-5 text-white border-0 blurred-background-button">Success</button>
+          <div class='d-flex flex-wrap justify-content-around card-body rounded-3 p-1 align-items-center blurred-background'>
+            <p class='card-subtitle text-white'>Card subtitle</p>
+            <button type="button" class="rounded-3 text-white border-0 blurred-background-button px-2 text-nowrap">Success</button>
           </div>
         </div>
       </div>

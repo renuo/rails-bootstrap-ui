@@ -1,0 +1,38 @@
+$grey: #ccc;
+$white: #fff;
+
+.asset-preview + .asset-preview {
+  margin-top: 30px;
+}
+
+.asset-header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 6px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.asset-title {
+  font-size: 12px;
+  opacity: .75;
+}
+
+.asset-contents {
+  background: $white;
+  border: 1px solid $grey;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.no-assets {
+  line-height: 1.6;
+  opacity: .7;
+  padding: 30px;
+  text-align: center;
+}
+
+.copy-icon {
+  cursor: pointer;
+  scale: 1.5;
+}
