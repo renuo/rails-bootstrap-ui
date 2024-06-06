@@ -1,26 +1,20 @@
 # frozen_string_literal: true
 
 class ButtonComponentPreview < Lookbook::Preview
+  include LookbookHelper
   # Interactive playground for experimenting with different button styles and states.
   # @param title "Button title"
-  # @param theme select { choices: theme_options } "Default bootstrap themes"
-  # @param state select { choices: [default, active, disabled] } "Button state"
-  # @param outline select { choices: [true, false] } "Outline button"
-  # @param block select { choices: [true, false] } "Block button"
-  def playground(title: 'Placeholder', theme: 'primary', state: 'default', outline: false, block: false)
-    render 'components/buttons/playground', title: title, theme: theme, state: state, outline: outline, block: block
+  # @param colour select :theme_choices
+  # @param disabled toggle "Disabled"
+  # @param active toggle "Active"
+  # @param outline toggle "Outline button"
+  # @source ../../../app/views/components/buttons/_playground.html.erb
+  def playground(title: 'Placeholder', colour: 'primary', disabled: false, outline: false, active: false)
+    render 'components/buttons/playground', title:, colour:, disabled:, outline:, active:
   end
 
+  # @source ../../../app/views/components/buttons/_themes.html.erb
   def themes
     render 'components/buttons/themes'
   end
-end
-
-private
-
-def theme_options
-  {
-    choices: %i[primary secondary success danger warning info light dark],
-    include_blank: true
-  }
 end

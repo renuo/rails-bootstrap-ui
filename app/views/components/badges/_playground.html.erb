@@ -1,0 +1,13 @@
+<% style = pill_button ? 'rounded-pill' : '' %>
+<% inline = inline ? '' : 'position-absolute top-0 start-100 translate-middle' %>
+
+<span class='badge <%= style %> text-bg-<%= colour %>'><%= text %></span>
+
+<div class='mt-5'>
+  <button type='button' class='btn btn-primary position-relative'>
+    Button
+    <span class='badge <%= inline %> <%= style %> text-bg-<%= colour %>'>
+      <%= notification %>
+    </span>
+  </button>
+</div>

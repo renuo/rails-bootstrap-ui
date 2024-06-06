@@ -1,0 +1,13 @@
+<div class='alert alert-<%= colour %> d-flex justify-content-between' role='alert'>
+  <div class="d-flex align-items-center">
+    <% if icon %>
+      <i class="fa-solid fa-triangle-exclamation me-2"></i>
+    <% end %>
+    <%= title %>
+    <% if alert_link %> <a href="#" class="alert-link ms-1">with a Link</a>
+    <% end %>
+  </div>
+  <% if dismissible %>
+    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+  <% end %>
+</div>
