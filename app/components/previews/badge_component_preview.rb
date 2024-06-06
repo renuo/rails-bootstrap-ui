@@ -3,15 +3,15 @@
 class BadgeComponentPreview < Lookbook::Preview
   include LookbookHelper
   # Interactive playground for experimenting with different alert styles and states.
-  # @param title "Badge title"
-  # @param body "Badge body"
-  # @param theme select :theme_choices
-  # @param change_style toggle "Change badge style"
+  # @param text "Badge text"
+  # @param notification "Badge notification text"
+  # @param colour select :theme_choices
+  # @param pill_button toggle "Add pill button class"
   # @param inline toggle "Inline badge"
   # @source ../../../app/views/components/badges/_playground.html.erb
 
-  def playground(title: 'Title', body: '+99', theme: 'danger', change_style: false, inline: false)
-    render 'components/badges/playground', title:, body:, theme:, change_style:, inline:
+  def playground(text: 'Badge', notification: '+99', colour: 'danger', pill_button: false, inline: false)
+    render 'components/badges/playground', text:, notification:, colour:, pill_button:, inline:
   end
 
   # @source ../../../app/views/components/badges/_themes.html.erb

@@ -34,7 +34,7 @@ class PagesTest < ApplicationSystemTestCase
     visit '/inspect/alert/playground'
 
     within_frame find('iframe') do
-      assert_selector 'div.alert-primary', text: 'This is a alert'
+      assert_selector 'div.alert-primary', text: 'This is an alert'
       assert_no_selector 'button.close'
     end
   end
@@ -67,7 +67,7 @@ class PagesTest < ApplicationSystemTestCase
     visit '/inspect/badge/playground'
 
     within_frame find('iframe') do
-      assert_selector 'span.badge.bg-danger'
+      assert_selector 'span.badge.text-bg-danger'
     end
   end
 end

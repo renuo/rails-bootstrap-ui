@@ -5,12 +5,12 @@ class AccordionComponentPreview < Lookbook::Preview
   # Interactive playground for experimenting with different alert styles and states.
   # @param title "Accordion title"
   # @param body "Accordion body"
-  # @param always_open toggle "Change accordion behavior to not collapse when clicking another"
-  # @param change_style toggle "Change accordion style"
+  # @param always_open toggle "Always keep accordion open"
+  # @param border toggle "Change accordion border style"
   # @source ../../../app/views/components/accordions/_playground.html.erb
 
-  def playground(title: 'Title', body: 'Accordion body text', always_open: false, change_style: false)
-    render 'components/accordions/playground', title:, body:, always_open:, change_style:
+  def playground(title: 'Title', body: 'Accordion body text', always_open: false, border: false)
+    render 'components/accordions/playground', title:, body:, always_open:, border:
   end
 
   # @source ../../../app/views/components/accordions/_themes.html.erb

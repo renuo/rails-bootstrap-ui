@@ -5,13 +5,13 @@ class AlertComponentPreview < Lookbook::Preview
   # Interactive playground for experimenting with different alert styles and states.
   # @param title "Alert title"
   # @param theme select :theme_choices
-  # @param link toggle "With link"
+  # @param alert_link toggle "Add an alert themed link"
   # @param dismissible toggle "Dismissible alert"
   # @param icon toggle "With icon"
   # @source ../../../app/views/components/alerts/_playground.html.erb
 
-  def playground(title: 'This is a alert', theme: 'primary', link: false, dismissible: false, icon: false)
-    render 'components/alerts/playground', title:, theme:, link:, dismissible:, icon:
+  def playground(title: 'This is an alert', theme: 'primary', alert_link: false, dismissible: false, icon: false)
+    render 'components/alerts/playground', title:, theme:, alert_link:, dismissible:, icon:
   end
 
   # @source ../../../app/views/components/alerts/_themes.html.erb
