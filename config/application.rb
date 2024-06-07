@@ -44,7 +44,6 @@ module RailsBootstrapUi
 
     Lookbook.add_panel('assets', 'panels/assets', {
                          label: 'Assets',
-                         copy: 'Copy to clipboard',
                          locals: lambda do |data|
                                    preview_path = data.preview.lookup_path
                                    preview_name = File.basename(preview_path, '.rb')
