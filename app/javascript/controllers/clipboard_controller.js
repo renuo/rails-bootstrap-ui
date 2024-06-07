@@ -1,12 +1,10 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
+  static targets = ['code'];
+
   copy() {
-    const textarea = document.createElement('textarea');
-    textarea.value = this.element.innerText;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
+    const text = this.codeTarget.querySelector('pre').innerText;
+    navigator.clipboard.writeText(text);
   }
 }

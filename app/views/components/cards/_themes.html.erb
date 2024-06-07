@@ -1,59 +1,69 @@
-<div data-controller="card">
-  <div class='mb-5'>
-    <div class='card p-4 rounded-4 border-0 bg-primary w-100 position-relative renuo-card'>
-      <div class='bg-primary rounded-4 z-index-0 position-absolute start-0 top-0 w-100 h-100 renuo-card-bg'></div>
-      <div class='row position-relative z-index-1'>
-        <div class='col-lg-8 d-flex flex-column'>
-          <div>
-            <div class='d-inline-flex bg-white text-primary rounded-pill mb-3 px-2'>Go somewhere</div>
-          </div>
-          <div class='d-flex d-lg-none py-3'>
-            <%= image_tag 'example_image.avif', class: 'w-100 h-100 rounded-4 border-0', alt: 'Placeholder Image' %>
-          </div>
-          <div class='card-body d-flex flex-column flex-grow-1 p-0'>
-            <h1 class='card-title text-white'>Card Title</h1>
-            <div class='row mt-auto'>
-              <div class='col-2 col-md-1 pe-0'>
-                <%= image_tag 'staff_portrait.png', class: 'rounded-2 w-75', alt: 'Placeholder Image' %>
-              </div>
-              <div class='col mt-auto ps-0 ps-lg-1'>
-                <p class='card-text mb-0 text-white'>Von <b>Name</b></p>
-                <p class='card-text text-white'><%= Time.zone.today %></p>
-              </div>
-              <div class='col-auto mt-auto'>
-                <div class='bg-white text-primary rounded-pill py-1 px-2'>
-                  <i class='fa-solid fa-arrow-right button-arrow'></i>
-                </div>
+<div class='mb-5'>
+  <div class='card p-4 rounded-4 border-0 bg-primary w-100 position-relative renuo-card'>
+    <div class='bg-primary rounded-4 z-index-0 position-absolute start-0 top-0 w-100 h-100 renuo-card-bg'></div>
+    <div class='row position-relative z-index-1'>
+      <div class='col-lg-8 d-flex flex-column'>
+        <div class="mb-3 gap-2 d-flex">
+          <div class='bg-primary-subtle fw-bold text-primary rounded-pill px-2'>Web Engineering</div>
+          <div class='bg-primary-subtle fw-bold text-primary rounded-pill px-2'>Strategy</div>
+          <div class='bg-primary-subtle fw-bold text-primary rounded-pill px-2'>Technology</div>
+        </div>
+        <div class='d-flex d-lg-none py-3'>
+          <%= image_tag 'example_image.avif', class: 'w-100 h-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+        </div>
+        <div class='card-body d-flex flex-column flex-grow-1 p-0'>
+          <h1 class='card-title text-white'>The Ultimate Guide to 4-Hour Intern Onboarding</h1>
+          <div class='row mt-auto'>
+            <div class='col-2 col-md-1 pe-0'>
+              <%= image_tag 'staff_portrait.png', class: 'rounded-2 w-75', alt: 'Placeholder Image' %>
+            </div>
+            <div class='col mt-auto ps-0 ps-lg-1'>
+              <p class='card-text mb-0 text-white'>By <b>Pascal Andermatt</b></p>
+              <p class='card-text text-white'><%= Time.zone.today %></p>
+            </div>
+            <div class='col-auto mt-auto'>
+              <div class='bg-primary-subtle text-primary rounded-pill py-1 px-2'>
+                <i class='fa-solid fa-arrow-right button-arrow'></i>
               </div>
             </div>
           </div>
         </div>
-        <div class='col-lg-4 d-none d-lg-flex'>
-          <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
-        </div>
+      </div>
+      <div class='col-lg-4 d-none d-lg-flex'>
+        <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
       </div>
     </div>
   </div>
+</div>
 
+<div data-controller="card">
   <div class="row mb-5">
     <div class="col">
-      <div class='card bg-dark rounded-4 image-card' data-card-target="card">
+      <div class='card bg-dark bg-opacity-75 rounded-4 image-card'
+           data-card-target="card"
+           data-action="mousemove->card#tiltEffect mouseleave->card#resetTiltEffect">
         <div class='card-body text-white pb-4'>
-          <h6 class='card-subtitle mb-1 mt-1'>Card text</h6>
-          <p class='card-subtitle mb-2 text-secondary'>Info</p>
-          <h4 class='card-title'>Card title</h4>
+          <h6 class='card-subtitle mb-1 mt-1'>Guide</h6>
+          <p class='card-subtitle mb-2 text-white-50'>By Pascal</p>
+          <h4 class='card-title'>Intern onboarding</h4>
           <%= image_tag 'example_image.avif', class: 'w-100 rounded-4 border-0', alt: 'Placeholder Image' %>
         </div>
       </div>
     </div>
 
     <div class="col mt-5 mt-md-0">
-      <div class='card border-0 overlay-card' data-card-target="card">
-        <%= image_tag 'example_image.avif', class: 'w-100 h-100 rounded-4 border-0', alt: 'Placeholder Image' %>
+      <div class='card border-0 overlay-card'
+           data-card-target="card"
+           data-action="mousemove->card#tiltEffect mouseleave->card#resetTiltEffect">
+        <%= image_tag 'example_image.avif',
+                      class: 'w-100 h-100 object-fit-cover rounded-4 border-0',
+                      alt: 'Placeholder Image' %>
         <div class="card-img-overlay d-flex justify-content-center align-items-end">
           <div class='d-flex flex-wrap justify-content-around card-body rounded-3 p-1 align-items-center blurred-background'>
-            <p class='card-subtitle text-white'>Card subtitle</p>
-            <button type="button" class="rounded-3 text-white border-0 blurred-background-button px-2 text-nowrap">Success</button>
+            <p class='card-subtitle text-white'>New blogs.</p>
+            <button type="button" class="rounded-3 text-white border-0 blurred-background-button px-2 text-nowrap">
+              Notify me
+            </button>
           </div>
         </div>
       </div>

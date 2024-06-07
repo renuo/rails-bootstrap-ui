@@ -3,14 +3,7 @@ import { Controller } from '@hotwired/stimulus';
 export default class extends Controller {
   static targets = ['card'];
 
-  connect() {
-    this.cardTargets.forEach((card) => {
-      card.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
-      card.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
-    });
-  }
-
-  handleMouseEnter(event) {
+  tiltEffect(event) {
     const card = event.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -25,7 +18,7 @@ export default class extends Controller {
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   }
 
-  handleMouseLeave(event) {
+  resetTiltEffect(event) {
     const card = event.currentTarget;
     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
   }

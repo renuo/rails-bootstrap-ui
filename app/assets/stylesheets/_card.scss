@@ -17,21 +17,29 @@ $blurred-color-2: rgba(0, 0, 0, .3);
   }
 
   .renuo-card-bg {
-    transform: scale(1.05);
+    transform: scale(1.025);
   }
 }
 
 //image card
 
 .image-card {
-  transition: transform .3s ease;
+  transition: .3s ease-in-out;
   width: 18rem;
+}
+
+.image-card:hover {
+  transition: transform .1s ease;
 }
 
 .overlay-card {
   height: 15rem;
-  transition: transform .3s ease;
+  transition: .3s ease-in-out;
   width: 15rem;
+}
+
+.overlay-card:hover {
+  transition: transform .1s ease;
 }
 
 .blurred-background {

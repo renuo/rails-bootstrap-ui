@@ -1,7 +1,7 @@
 $grey: #ccc;
 $white: #fff;
 
-.asset-preview + .asset-preview {
+.asset-preview {
   margin-top: 30px;
 }
 
@@ -23,6 +23,14 @@ $white: #fff;
   border: 1px solid $grey;
   border-radius: 6px;
   overflow: hidden;
+
+  .float-end {
+    float: right;
+  }
+
+  .m-4 {
+    margin: 1.5rem;
+  }
 }
 
 .no-assets {
