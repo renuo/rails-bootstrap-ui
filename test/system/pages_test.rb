@@ -70,4 +70,20 @@ class PagesTest < ApplicationSystemTestCase
       assert_selector 'span.badge.text-bg-danger'
     end
   end
+
+  test 'visit the utilities themes page' do
+    visit '/inspect/utilities/themes'
+
+    within_frame find('iframe') do
+      assert_selector 'p', text: 'Resize the window to see the effect of different utility classes.'
+    end
+  end
+
+  test 'visit the utilities playground page' do
+    visit '/inspect/utilities/playground'
+
+    within_frame find('iframe') do
+      assert_selector 'div.position-sm-relative'
+    end
+  end
 end
