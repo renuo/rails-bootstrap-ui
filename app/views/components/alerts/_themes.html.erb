@@ -16,8 +16,12 @@
 <div class="alert alert-warning" role="alert">
     A simple warning alert—check it out!
 </div>
-<div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
+<div class="alert alert-info alert-dismissible fade show"
+     role="alert"
+     data-controller='disappearing-alert'
+     data-action='animationend->disappearing-alert#dismissAlert'>
+  Disappearing Live Alert
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <div class="alert alert-light" role="alert">
     A simple light alert—check it out!

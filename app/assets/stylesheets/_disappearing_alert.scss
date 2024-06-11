@@ -1,0 +1,24 @@
+@keyframes progress {
+  from {
+    inset: 0 100% 0 0;
+  }
+
+  to {
+    inset: 0;
+  }
+}
+
+.alert.fade {
+  overflow: hidden;
+
+  &::before {
+    animation: progress 5s ease-in-out forwards;
+    background-color: rgb(0 0 0 / 3%);
+    content: '';
+    position: absolute;
+  }
+
+  &:hover::before {
+    animation-play-state: paused;
+  }
+}
