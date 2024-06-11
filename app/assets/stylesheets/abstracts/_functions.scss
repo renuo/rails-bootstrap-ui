@@ -1,0 +1,9 @@
+@function add-responsiveness($utilities-map) {
+  $new-map: ();
+  @each $key, $value in $utilities-map {
+    $new-map: map-merge($new-map, (
+        $key: map-merge($value, (responsive: true))
+    ));
+  }
+  @return $new-map;
+}
