@@ -94,4 +94,14 @@ class PagesTest < ApplicationSystemTestCase
       assert_selector 'button.position-sm-relative'
     end
   end
+
+  test 'visit the disappearing alerts page' do
+    visit '/inspect/disappearing_alert/themes'
+
+    within_frame find('iframe') do
+      assert_no_selector 'div.alert-primary'
+      find('button.btn-primary').click
+      assert_selector 'div.alert-info'
+    end
+  end
 end
