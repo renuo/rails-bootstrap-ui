@@ -100,7 +100,7 @@ class PagesTest < ApplicationSystemTestCase
 
     within_frame find('iframe') do
       assert_no_selector 'div.alert-primary'
-      find('button.btn-primary').click
+      click_button('Show live alert')
       assert_selector 'div.alert-info'
     end
   end

@@ -1,7 +1,8 @@
 <div data-controller="disappearing-alert">
-  <div data-disappearing-alert-target="alert"></div>
-  <button type="button" class="btn btn-primary position-absolute top-50 start-50" data-action="click->disappearing-alert#liveAlert">Show
-    live alert
+  <button type="button"
+          class="btn btn-primary position-absolute top-50 start-50 translate-middle"
+          data-action="click->disappearing-alert#liveAlert">
+    Show live alert
   </button>
 
   <template data-disappearing-alert-target="alertTemplate">
