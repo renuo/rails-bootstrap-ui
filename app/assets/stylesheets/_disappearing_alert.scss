@@ -1,3 +1,4 @@
+$alert-color: rgb(0 0 0 / 3%);
 @keyframes progress {
   from {
     inset: 0 100% 0 0;
@@ -13,7 +14,7 @@
 
   &::before {
     animation: progress 5s ease-in-out forwards;
-    background-color: rgb(0 0 0 / 3%);
+    background-color: $alert-color;
     content: '';
     position: absolute;
   }
