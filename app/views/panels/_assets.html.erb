@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag '_assets_panel', 'data-turbo-track': 'reload' %>
+<script src='https://kit.fontawesome.com/328ac1243c.js' crossorigin='anonymous' defer='true'></script>
+<%= javascript_importmap_tags %>
+
+<div class="lookbook-panel">
+  <% if assets.any? %>
+    <% assets.each do |asset| %>
+      <div class="asset-preview">
+        <header class="asset-header">
+          <h4 class="asset-title font-mono"><%= asset.basename %></h4>
+        </header>
+        <div data-controller="clipboard" class="asset-contents">
+          <i class="fa-regular fa-copy float-end m-4 copy-icon" data-action="click->clipboard#copy"></i>
+          <div data-clipboard-target='code'>
+            <%= code language: Lookbook::Lang.guess(asset, :ruby)[:name], line_numbers: false do %>
+              <%== File.read(asset) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="no-assets">
+      <strong>No assets to display.</strong><br>
+    </p>
+  <% end %>
+</div>

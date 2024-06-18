@@ -1,0 +1,53 @@
+//renuo card
+$blurred-color-1: rgba(0, 0, 0, .1);
+$blurred-color-2: rgba(0, 0, 0, .3);
+
+.renuo-card-bg {
+  transition: transform .3s ease;
+}
+
+.button-arrow {
+  transition: padding .3s ease;
+}
+
+.renuo-card:hover {
+  .button-arrow {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  .renuo-card-bg {
+    transform: scale(1.025);
+  }
+}
+
+//image card
+
+.image-card {
+  transition: .3s ease-in-out;
+  width: 18rem;
+}
+
+.image-card:hover {
+  transition: transform .1s ease;
+}
+
+.overlay-card {
+  height: 15rem;
+  transition: .3s ease-in-out;
+  width: 15rem;
+}
+
+.overlay-card:hover {
+  transition: transform .1s ease;
+}
+
+.blurred-background {
+  backdrop-filter: blur(5px);
+  background-color: $blurred-color-1;
+}
+
+.blurred-background-button {
+  background-color: $blurred-color-2;
+}
+

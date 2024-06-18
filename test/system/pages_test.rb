@@ -71,6 +71,14 @@ class PagesTest < ApplicationSystemTestCase
     end
   end
 
+  test 'visit the cards themes page' do
+    visit '/inspect/card/themes'
+
+    within_frame find('iframe') do
+      assert_selector 'div.card', class: 'renuo-card'
+    end
+  end
+
   test 'visit the utilities themes page' do
     visit '/inspect/utilities/themes'
 
