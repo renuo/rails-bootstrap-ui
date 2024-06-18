@@ -1,0 +1,16 @@
+<div data-controller="disappearing-alert">
+  <button type="button"
+          class="btn btn-primary position-absolute top-50 start-50 translate-middle"
+          data-action="click->disappearing-alert#liveAlert">
+    Show live alert
+  </button>
+
+  <template data-disappearing-alert-target="alertTemplate">
+    <div class="alert alert-info alert-dismissible fade show" role="alert"
+         data-controller='disappearing-alert'
+         data-action='animationend->disappearing-alert#dismissAlert'>
+      Disappearing Live Alert
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </template>
+</div>
