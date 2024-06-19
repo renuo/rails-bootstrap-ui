@@ -26,7 +26,7 @@ Lookbook.add_panel('assets', 'panels/assets', {
                                  app/javascript/controllers/#{base_name}_controller.js
                                  app/assets/stylesheets/_#{base_name}.scss
                                  app/assets/stylesheets/abstracts/_#{base_name}.scss
-                                 app/assets/stylesheets/_#{base_name}.css
+                                 app/assets/stylesheets/#{base_name}.css
                                ]
 
                                full_paths = asset_paths.map { |path| Rails.root.join(path) }
