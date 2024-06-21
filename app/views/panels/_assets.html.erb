@@ -12,7 +12,7 @@
         <div data-controller="clipboard" class="asset-contents">
           <i class="fa-regular fa-copy float-end m-4 copy-icon" data-action="click->clipboard#copy"></i>
           <div data-clipboard-target='code'>
-            <%= code language: Lookbook::Lang.guess(asset, :ruby)[:name], line_numbers: false do %>
+            <%= code language: Lookbook::Lang.guess(asset, :ruby)[:name], line_numbers: true do %>
               <%== File.read(asset) %>
             <% end %>
           </div>
