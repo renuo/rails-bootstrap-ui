@@ -1,36 +1,5 @@
-$utilities: map-merge(
-  $utilities, add-responsiveness(
-    (
-      'position': (
-        property: position,
-        values: relative absolute static fixed sticky,
-      ),
-      'top': (
-        property: top,
-        values: $position-values,
-      ),
-      'bottom': (
-        property: bottom,
-        values: $position-values,
-      ),
-      'start': (
-        property: left,
-        class: start,
-        values: $position-values,
-      ),
-      'end': (
-        property: right,
-        class: end,
-        values: $position-values,
-      ),
-      'translate-middle': (
-        property: transform,
-        class: translate-middle,
-        values: (
-          null: translate(-50%, -50%),
-          x: translateX(-50%),
-          y: translateY(-50%),
-        ),
-      ),
-    )
-));
+@each $key, $value in $utilities {
+  $utilities: map-merge($utilities, (
+      $key: map-merge($value, (responsive: true))
+  ));
+}
