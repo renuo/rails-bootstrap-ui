@@ -1,0 +1,10 @@
+$kbd-color: rgb(0, 0, 0);
+$kbd-bg: rgb(255, 255, 255);
+
+kbd {
+  border: 1px outset rgba(var(--bs-emphasis-color-rgb), 0.65);
+
+  kbd {
+    border: none;
+  }
+}
