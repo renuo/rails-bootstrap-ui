@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  mount Lookbook::Engine, at: '/'
+  mount Lookbook::Engine, at: '/lookbook'
+
+  root to: redirect('/lookbook')
 end
