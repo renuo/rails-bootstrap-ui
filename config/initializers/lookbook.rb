@@ -38,9 +38,10 @@ end
 
 generate_asset_panel('CSS', 'CSS',
                      %w[
+                       app/assets/stylesheets/{base_name}.css
                        app/assets/stylesheets/_{base_name}.scss
                        app/assets/stylesheets/abstracts/_{base_name}.scss
-                       app/assets/stylesheets/{base_name}.css
+                       app/assets/stylesheets/components/_{base_name}.scss
                      ])
 
 generate_asset_panel('JS', 'JS',
