@@ -1,0 +1,9 @@
+<% message = 'Please read this message. Its a very important message. Do not dare skip it by clicking Accept.' %>
+
+<button type="button" class="btn btn-warning" onclick='alert("<%= message %>");'>Alert!</button>
+
+<%= button_to 'Dangerous Action', '/some_action_path',
+              class: 'btn btn-danger mt-3', form: { data: { turbo_confirm: message } } %>
+
+<%= render 'components/confirm_alert/turbo_alert_modal' %>
+<%= render 'components/confirm_alert/turbo_confirm_modal' %>

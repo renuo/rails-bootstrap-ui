@@ -1,10 +1,3 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import { Turbo } from '@hotwired/turbo-rails';
-import 'controllers';
-import 'popper';
-import 'bootstrap';
-
-
 window.alert = (message) => {
   const modal = document.querySelector('#turbo-alert-modal');
   modal.querySelector('.modal-body').innerText = message;
@@ -35,4 +28,3 @@ Turbo.setConfirmMethod((message, _element, submitter) => {
     }, { once: true });
   });
 });
-
