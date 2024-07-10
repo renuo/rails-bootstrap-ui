@@ -91,7 +91,7 @@ class PagesTest < ApplicationSystemTestCase
     visit '/inspect/position_utilities/playground'
 
     within_frame find('iframe') do
-      assert_selector 'button.position-sm-relative'
+      assert_selector 'button.position-sm-absolute'
     end
   end
 

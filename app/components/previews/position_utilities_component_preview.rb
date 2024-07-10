@@ -9,7 +9,7 @@ class PositionUtilitiesComponentPreview < Lookbook::Preview
   # @param arrangement_values select { choices: [0, 50, 100] } "Bootstrap arrangement values"
   def playground(position: 'absolute', responsive_classes: 'sm', arrangement: 'top', arrangement_values: '0')
     render 'components/position_utilities/playground', position:, responsive_classes:, arrangement:,
-                                                        arrangement_values:
+                                                       arrangement_values:
   end
 
   # @source ../../../app/views/components/position_utilities/_themes.html.erb
