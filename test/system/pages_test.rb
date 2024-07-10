@@ -79,19 +79,19 @@ class PagesTest < ApplicationSystemTestCase
     end
   end
 
-  test 'visit the bootstrap_utilities themes page' do
-    visit '/inspect/bootstrap_utilities/themes'
+  test 'visit the position_utilities themes page' do
+    visit '/inspect/position_utilities/themes'
 
     within_frame find('iframe') do
       assert_selector 'p', text: 'Resize the window to see the effect of different utility classes.'
     end
   end
 
-  test 'visit the bootstrap_utilities playground page' do
-    visit '/inspect/bootstrap_utilities/playground'
+  test 'visit the position_utilities playground page' do
+    visit '/inspect/position_utilities/playground'
 
     within_frame find('iframe') do
-      assert_selector 'button.position-sm-relative'
+      assert_selector 'button.position-sm-absolute'
     end
   end
 
