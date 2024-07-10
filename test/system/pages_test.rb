@@ -4,7 +4,7 @@ require 'application_system_test_case'
 
 class PagesTest < ApplicationSystemTestCase
   test 'visit the buttons themes page' do
-    visit '/inspect/button/themes'
+    visit '/lookbook/inspect/button/themes'
 
     within_frame find('iframe') do
       assert_selector 'button', text: 'Primary'
@@ -14,7 +14,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the buttons playground page' do
-    visit '/inspect/button/playground'
+    visit '/lookbook/inspect/button/playground'
 
     within_frame find('iframe') do
       assert_selector 'button.btn-primary', text: 'Placeholder'
@@ -23,7 +23,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the alerts themes page' do
-    visit '/inspect/alert/themes'
+    visit '/lookbook/inspect/alert/themes'
 
     within_frame find('iframe') do
       assert_selector 'div.alert-primary', text: 'A simple primary alert—check it out!'
@@ -31,7 +31,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the alerts playground page' do
-    visit '/inspect/alert/playground'
+    visit '/lookbook/inspect/alert/playground'
 
     within_frame find('iframe') do
       assert_selector 'div.alert-primary', text: 'This is an alert'
@@ -40,7 +40,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the accordions themes page' do
-    visit '/inspect/accordion/themes'
+    visit '/lookbook/inspect/accordion/themes'
 
     within_frame find('iframe') do
       assert_selector 'div.accordion.accordion-flush'
@@ -48,7 +48,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the accordions playground page' do
-    visit '/inspect/accordion/playground'
+    visit '/lookbook/inspect/accordion/playground'
 
     within_frame find('iframe') do
       assert_selector 'div.accordion'
@@ -56,7 +56,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the badges themes page' do
-    visit '/inspect/badge/themes'
+    visit '/lookbook/inspect/badge/themes'
 
     within_frame find('iframe') do
       assert_selector 'span.badge.text-bg-primary'
@@ -64,7 +64,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the badges playground page' do
-    visit '/inspect/badge/playground'
+    visit '/lookbook/inspect/badge/playground'
 
     within_frame find('iframe') do
       assert_selector 'span.badge.text-bg-danger'
@@ -72,7 +72,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the cards themes page' do
-    visit '/inspect/card/themes'
+    visit '/lookbook/inspect/card/themes'
 
     within_frame find('iframe') do
       assert_selector 'div.card', class: 'renuo-card'
@@ -80,7 +80,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the position_utilities themes page' do
-    visit '/inspect/position_utilities/themes'
+    visit '/lookbook/inspect/position_utilities/themes'
 
     within_frame find('iframe') do
       assert_selector 'p', text: 'Resize the window to see the effect of different utility classes.'
@@ -88,7 +88,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the position_utilities playground page' do
-    visit '/inspect/position_utilities/playground'
+    visit '/lookbook/inspect/position_utilities/playground'
 
     within_frame find('iframe') do
       assert_selector 'button.position-sm-absolute'
@@ -96,7 +96,7 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the disappearing alerts page' do
-    visit '/inspect/disappearing_alert/themes'
+    visit '/lookbook/inspect/disappearing_alert/themes'
 
     within_frame find('iframe') do
       assert_no_selector 'div.alert-primary'
