@@ -120,4 +120,22 @@ class PagesTest < ApplicationSystemTestCase
       assert_selector 'div.alert-info'
     end
   end
+
+  test 'visit the kbd page' do
+    visit '/lookbook/inspect/kbd/themes'
+
+    within_frame find('iframe') do
+      assert_selector 'kbd', text: 'CMD'
+    end
+  end
+
+  test 'visit the confirm alert page' do
+    visit '/lookbook/inspect/confirm_alert/themes'
+
+    within_frame find('iframe') do
+      assert_no_selector button, text: 'Confirm'
+      click_button('Dangerous Action')
+      assert_selector 'button', text: 'Confirm'
+    end
+  end
 end
