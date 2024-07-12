@@ -2,74 +2,59 @@
 
 require 'application_system_test_case'
 
-# rubocop:disable Metrics/ClassLength
 class PagesTest < ApplicationSystemTestCase
-  test 'visit the buttons themes page' do
-    visit '/lookbook/inspect/button/themes'
+  def visit_preview_page(page) = visit("/lookbook/preview/#{page}")
 
-    within_frame find('iframe') do
-      assert_selector 'button', text: 'Primary'
-      assert_selector 'button', text: 'Small button'
-      assert_selector 'button.active', text: 'Active toggle button'
-    end
+  test 'visit the buttons themes page' do
+    visit_preview_page('button/themes')
+
+    assert_selector 'button', text: 'Primary'
+    assert_selector 'button', text: 'Small button'
+    assert_selector 'button.active', text: 'Active toggle button'
   end
 
   test 'visit the buttons playground page' do
-    visit '/lookbook/inspect/button/playground'
+    visit_preview_page('button/playground')
 
-    within_frame find('iframe') do
-      assert_selector 'button.btn-primary', text: 'Placeholder'
-      assert_no_selector 'button.btn-primary.active'
-    end
+    assert_selector 'button.btn-primary', text: 'Placeholder'
+    assert_no_selector 'button.btn-primary.active'
   end
 
   test 'visit the alerts themes page' do
-    visit '/lookbook/inspect/alert/themes'
+    visit_preview_page('alert/themes')
 
-    within_frame find('iframe') do
-      assert_selector 'div.alert-primary', text: 'A simple primary alert—check it out!'
-    end
+    assert_selector 'div.alert-primary', text: 'A simple primary alert—check it out!'
   end
 
   test 'visit the alerts playground page' do
-    visit '/lookbook/inspect/alert/playground'
+    visit_preview_page('alert/playground')
 
-    within_frame find('iframe') do
-      assert_selector 'div.alert-primary', text: 'This is an alert'
-      assert_no_selector 'button.close'
-    end
+    assert_selector 'div.alert-primary', text: 'This is an alert'
+    assert_no_selector 'button.close'
   end
 
   test 'visit the accordions themes page' do
-    visit '/lookbook/inspect/accordion/themes'
+    visit_preview_page('accordion/themes')
 
-    within_frame find('iframe') do
-      assert_selector 'div.accordion.accordion-flush'
-    end
+    assert_selector 'div.accordion.accordion-flush'
   end
 
   test 'visit the accordions playground page' do
-    visit '/lookbook/inspect/accordion/playground'
+    visit_preview_page('accordion/playground')
 
-    within_frame find('iframe') do
-      assert_selector 'div.accordion'
-    end
+    assert_selector 'div.accordion'
   end
 
   test 'visit the badges themes page' do
-    visit '/lookbook/inspect/badge/themes'
+    visit_preview_page('badge/themes')
 
-    within_frame find('iframe') do
-      assert_selector 'span.badge.text-bg-primary'
-    end
+    assert_selector 'span.badge.text-bg-primary'
   end
 
   test 'visit the badges playground page' do
-    visit '/lookbook/inspect/badge/playground'
+    visit_preview_page('badge/playground')
 
-    within_frame find('iframe') do
-      assert_selector 'span.badge.text-bg-danger'
-    end
+    assert_selector 'span.badge.text-bg-danger'
   end
 
   test 'visit the breadcrumbs themes page' do
@@ -81,27 +66,21 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the cards themes page' do
-    visit '/lookbook/inspect/card/themes'
+    visit_preview_page('card/themes')
 
-    within_frame find('iframe') do
-      assert_selector 'div.card', class: 'renuo-card'
-    end
+    assert_selector 'div.card', class: 'renuo-card'
   end
 
   test 'visit the position_utilities themes page' do
-    visit '/lookbook/inspect/position_utilities/themes'
+    visit_preview_page('position_utilities/themes')
 
-    within_frame find('iframe') do
-      assert_selector 'p', text: 'Resize the window to see the effect of different utility classes.'
-    end
+    assert_selector 'p', text: 'Resize the window to see the effect of different utility classes.'
   end
 
   test 'visit the position_utilities playground page' do
-    visit '/lookbook/inspect/position_utilities/playground'
+    visit_preview_page('position_utilities/playground')
 
-    within_frame find('iframe') do
-      assert_selector 'button.position-sm-absolute'
-    end
+    assert_selector 'button.position-sm-absolute'
   end
 
   test 'visit the tab preview page' do
@@ -113,13 +92,16 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the disappearing alerts page' do
-    visit '/lookbook/inspect/disappearing_alert/themes'
+    visit_preview_page('disappearing_alert/themes')
 
-    within_frame find('iframe') do
-      assert_no_selector 'div.alert-primary'
-      click_button('Show live alert')
-      assert_selector 'div.alert-info'
-    end
+    assert_no_selector 'div.alert-primary'
+    click_button('Show live alert')
+    assert_selector 'div.alert-info'
+  end
+
+  test 'visit the avatars page' do
+    visit_preview_page('avatar/themes')
+    assert_selector 'div.avatar'
   end
 
   test 'visit the kbd page' do
@@ -140,4 +122,3 @@ class PagesTest < ApplicationSystemTestCase
     end
   end
 end
-# rubocop:enable Metrics/ClassLength
