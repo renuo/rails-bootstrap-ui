@@ -58,11 +58,9 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the breadcrumbs themes page' do
-    visit '/lookbook/inspect/breadcrumbs/themes'
+    visit_preview_page('breadcrumbs/themes')
 
-    within_frame find('iframe') do
-      assert_selector '.breadcrumb'
-    end
+    assert_selector '.breadcrumb'
   end
 
   test 'visit the cards themes page' do
@@ -84,11 +82,9 @@ class PagesTest < ApplicationSystemTestCase
   end
 
   test 'visit the tab preview page' do
-    visit '/lookbook/inspect/tab/nav_underline'
+    visit_preview_page('tab/nav_underline')
 
-    within_frame find('iframe') do
-      assert_selector 'nav.nav.nav-underline'
-    end
+    assert_selector 'nav.nav.nav-underline'
   end
 
   test 'visit the disappearing alerts page' do
@@ -101,24 +97,27 @@ class PagesTest < ApplicationSystemTestCase
 
   test 'visit the avatars page' do
     visit_preview_page('avatar/themes')
+
     assert_selector 'div.avatar'
   end
 
   test 'visit the kbd page' do
-    visit '/lookbook/inspect/kbd/themes'
+    visit_preview_page('kbd/themes')
 
-    within_frame find('iframe') do
-      assert_selector 'kbd', text: 'CMD'
-    end
+    assert_selector 'kbd', text: 'CMD'
+  end
+
+  test 'visit the tooltip page' do
+    visit_preview_page('tooltip/themes')
+
+    assert_selector 'button', text: 'Tooltip on top'
   end
 
   test 'visit the confirm alert page' do
-    visit '/lookbook/inspect/confirm_alert/themes'
+    visit_preview_page('confirm_alert/themes')
 
-    within_frame find('iframe') do
-      assert_no_selector 'button', text: 'Confirm'
-      click_button('Dangerous Action')
-      assert_selector 'button', text: 'Confirm'
-    end
+    assert_no_selector 'button', text: 'Confirm'
+    click_button('Dangerous Action')
+    assert_selector 'button', text: 'Confirm'
   end
 end
