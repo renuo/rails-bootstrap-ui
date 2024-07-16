@@ -95,6 +95,14 @@ class PagesTest < ApplicationSystemTestCase
     end
   end
 
+  test 'visit the tab preview page' do
+    visit '/lookbook/inspect/tab/nav_underline'
+
+    within_frame find('iframe') do
+      assert_selector 'nav.nav.nav-underline'
+    end
+  end
+
   test 'visit the disappearing alerts page' do
     visit '/lookbook/inspect/disappearing_alert/themes'
 
