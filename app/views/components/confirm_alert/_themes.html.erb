@@ -4,8 +4,12 @@
 
 <button type="button" class="btn btn-warning" onclick='alert("<%= message %>");'>Alert!</button>
 
-<%= button_to 'Dangerous Action', 'some_path', method: :get, class: 'btn btn-danger mt-3',
-      data: { turbo_confirm: message, turbo_confirm_title: 'A custom title for each confirmation modal!' } %>
+<%= button_to 'Dangerous Action',
+              'some_path',
+              method: :get,
+              class: 'btn btn-danger mt-3',
+              data: { turbo_confirm: message,
+                      turbo_confirm_title: 'A custom title for each confirmation modal!' } %>
 
 <%# Modals: You can place these two modals on your base html file for convenience to have them available everywhere %>
 <%# Alert Modal %>
