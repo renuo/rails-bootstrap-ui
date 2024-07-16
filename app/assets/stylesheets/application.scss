@@ -1,8 +1,9 @@
-@import 'kbd';
+@import 'components/kbd';
 @import 'bootstrap';
 @import 'abstracts/position_utilities';
 @import 'bootstrap/utilities/api';
-@import 'breadcrumbs';
-@import 'card';
+@import 'components/card';
+@import 'components/breadcrumbs';
 @import 'assets_panel';
-@import 'disappearing_alert';
+@import 'components/disappearing_alert';
+@import 'components/tab';

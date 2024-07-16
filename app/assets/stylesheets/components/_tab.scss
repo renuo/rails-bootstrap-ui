@@ -1,0 +1,52 @@
+$nav-underline-nav-link-padding-x: 0;
+$nav-underline-nav-link-padding-y: 1rem;
+$primary: rgb(40, 215, 157);
+
+.card {
+  --bs-card-spacer-x: 1.5rem;
+  --bs-card-spacer-y: 1.5rem;
+  --bs-card-border-width: 1px;
+  --bs-card-border-radius: 1rem;
+  --bs-card-cap-bg: initial;
+  --bs-card-cap-padding-x: 1.5rem;
+  --bs-card-cap-padding-y: 1rem;
+  --separator-thickness: 1px;
+  --separator-color: #{rgba($gray-900, 0.1)};
+
+  .card-separator {
+    background-color: var(--separator-color);
+    height: var(--separator-thickness);
+    margin: 1rem calc(var(--bs-card-spacer-x) * -1);
+  }
+
+  .nav-underline {
+    border-bottom: var(--separator-thickness) solid var(--separator-color);
+
+    // Counter the .card spacer margin to fully align the nav-underline with the card edge
+    margin: calc(var(--bs-card-spacer-y) * -1) calc(var(--bs-card-spacer-x) * -1)
+    var(--bs-card-spacer-y) calc(var(--bs-card-spacer-x) * -1);
+  }
+}
+
+.nav-underline {
+  --bs-nav-underline-gap: 0;
+  --nav-underline-link-active-color: #{$navbar-light-active-color};
+
+  .nav-link {
+    --bs-nav-link-padding-y: #{$nav-underline-nav-link-padding-y};
+    --bs-nav-link-color: #{$navbar-light-color};
+    --bs-nav-link-hover-color: #{$navbar-light-hover-color};
+
+    margin: 0 1.5rem;
+
+    &.active {
+      border-bottom-color: $primary;
+      font-weight: normal;
+    }
+
+    &:hover {
+      border-bottom-color: $primary;
+    }
+  }
+}
+

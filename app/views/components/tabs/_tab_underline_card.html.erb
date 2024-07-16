@@ -1,0 +1,106 @@
+<div class="card" data-controller="tab">
+  <div class="card-body">
+    <nav class="nav nav-underline">
+      <a class="nav-link active" data-bs-toggle="tab" href="#search-name-tab-content"
+         data-action="click->tab#toggleTabFieldsetAttributes">
+        Personal data
+      </a>
+
+      <a class="nav-link" data-bs-toggle="tab" href="#search-email-tab-content"
+         data-action="click->tab#toggleTabFieldsetAttributes">
+        Email
+      </a>
+
+      <a class="nav-link" data-bs-toggle="tab" href="#search-context-id-tab-content"
+         data-action="click->tab#toggleTabFieldsetAttributes">
+        ID
+      </a>
+    </nav>
+
+    <div class="tab-content">
+      <fieldset id="search-name-tab-content" data-tab-target="tabFieldset" class="tab-pane mt-3 active">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group has-float-label string required first_name">
+              <label class="form-label string required" for="first_name">
+                <abbr title="erforderlich">*</abbr> First name
+              </label>
+              <input class="form-control string required" autofocus="autofocus" required="required"
+                     aria-required="true" type="text" name="#" id="first_name" autocomplete="given-name">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group has-float-label string required last_name">
+              <label class="form-label string required" for="last_name">
+                <abbr title="erforderlich">*</abbr> Last name
+              </label>
+              <input class="form-control string required" required="required" aria-required="true" type="text"
+                     name="#" id="last_name" autocomplete="family-name">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-6">
+            <div class="form-group has-float-label date required viseca_search_birthdate">
+              <label class="form-label date required" for="birthdate">
+                <abbr title="erforderlich">*</abbr> Birthdate
+              </label>
+              <input class="form-control date required" data-tab-target="searchAttribute" max="2099-01-01"
+                     required="required" aria-required="true" type="date" name="#" id="birthdate" autocomplete="bday">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex align-items-end h-100 gap-3">
+              <input type="submit" name="commit" value="Search" class="btn btn-primary w-100"
+                     data-disable-with="Suchen">
+              <button class="btn btn-secondary w-100">Clear</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="search-email-tab-content" data-tab-target="tabFieldset" class="tab-pane mt-3">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group has-float-label string required email">
+              <label class="form-label string required" for="email">
+                <abbr title="erforderlich">*</abbr> Email
+              </label>
+              <input class="form-control string required" required="required" aria-required="true" type="text"
+                     name="#" id="email" autocomplete="email">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex align-items-end h-100 gap-3">
+              <input type="submit" name="commit" value="Search" class="btn btn-primary w-100"
+                     data-disable-with="Suchen">
+              <button class="btn btn-secondary w-100">Clear</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="search-context-id-tab-content" data-tab-target="tabFieldset" class="tab-pane mt-3">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group has-float-label string required context_id">
+              <label class="form-label string required" for="context_id">
+                <abbr title="erforderlich">*</abbr> ID
+              </label>
+              <input class="form-control string required" required="required" aria-required="true" type="text"
+                     name="#" id="context_id" autocomplete="off">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="d-flex align-items-end h-100 gap-3">
+              <input type="submit" name="commit" value="Search" class="btn btn-primary w-100"
+                     data-disable-with="Suchen">
+              <button class="btn btn-secondary w-100">Clear</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
