@@ -133,7 +133,7 @@ class PagesTest < ApplicationSystemTestCase
     visit '/lookbook/inspect/confirm_alert/themes'
 
     within_frame find('iframe') do
-      assert_no_selector button, text: 'Confirm'
+      assert_no_selector 'button', text: 'Confirm'
       click_button('Dangerous Action')
       assert_selector 'button', text: 'Confirm'
     end

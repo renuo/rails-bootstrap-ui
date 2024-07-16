@@ -1,9 +1,41 @@
 <% message = 'Please read this message. Its a very important message. Do not dare skip it.' %>
 
+<p>These are your classic browser-native alerts and confirms, overridden to use personalized bootstrap modals instead.</p>
+
 <button type="button" class="btn btn-warning" onclick='alert("<%= message %>");'>Alert!</button>
 
-<%= button_to 'Dangerous Action', '/some_action_path',
-              class: 'btn btn-danger mt-3', form: { 'data-turbo-confirm': message } %>
+<%= button_to 'Dangerous Action', 'some_path', method: :get, class: 'btn btn-danger mt-3',
+      data: { turbo_confirm: message, turbo_confirm_title: 'A custom title for each confirmation modal!' } %>
 
-<%= render 'components/confirm_alert/turbo_alert_modal' %>
-<%= render 'components/confirm_alert/turbo_confirm_modal' %>
+<%# Modals: You can place these two modals on your base html file for convenience to have them available everywhere %>
+<%# Alert Modal %>
+<div class='modal fade' id='turbo-alert-modal' tabindex='-1' aria-labelledby='turboAlertModalLabel' aria-hidden='true'
+     data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title' id='turboAlertModalLabel'>This is a nicely styled alert modal!</h5>
+      </div>
+      <div class='modal-body'></div>
+      <div class='modal-footer'>
+        <button type="button" class="btn btn-primary" data-bs-dismiss='modal'>Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Confirm Modal %>
+<div class='modal fade' id='turbo-confirm-modal' tabindex='-1' aria-labelledby='turboConfirmModalLabel' aria-hidden='true'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title' data-default-text="This is a nicely styled confirmation modal!"></h5>
+      </div>
+      <div class='modal-body'></div>
+      <div class='modal-footer'>
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss='modal'>Cancel</button>
+        <button type="button" class="btn btn-success" id='confirm-button'>Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
