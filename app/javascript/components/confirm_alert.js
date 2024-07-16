@@ -9,8 +9,8 @@ window.alert = (message) => {
 // window.confirm is also possible but only takes "message" as argument
 Turbo.setConfirmMethod((message, _element, submitter) => {
   const modal = document.querySelector('#turbo-confirm-modal');
-  let modalTitle = modal.querySelector('.modal-title');
-  let modalBody = modal.querySelector('.modal-body');
+  const modalTitle = modal.querySelector('.modal-title');
+  const modalBody = modal.querySelector('.modal-body');
   const confirmButton = modal.querySelector('#confirm-button');
 
   modalTitle.innerText = submitter.dataset.turboConfirmTitle || modalTitle.dataset.defaultText;
