@@ -71,6 +71,14 @@ class PagesTest < ApplicationSystemTestCase
     end
   end
 
+  test 'visit the breadcrumbs themes page' do
+    visit '/lookbook/inspect/breadcrumbs/themes'
+
+    within_frame find('iframe') do
+      assert_selector '.breadcrumb'
+    end
+  end
+
   test 'visit the cards themes page' do
     visit '/lookbook/inspect/card/themes'
 
