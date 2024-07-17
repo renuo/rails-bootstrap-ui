@@ -2,6 +2,7 @@
 
 require 'application_system_test_case'
 
+# rubocop:disable Metrics/ClassLength
 class PagesTest < ApplicationSystemTestCase
   test 'visit the buttons themes page' do
     visit '/lookbook/inspect/button/themes'
@@ -139,3 +140,4 @@ class PagesTest < ApplicationSystemTestCase
     end
   end
 end
+# rubocop:enable Metrics/ClassLength
