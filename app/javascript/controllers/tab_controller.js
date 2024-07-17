@@ -12,7 +12,6 @@ export default class extends Controller {
   toggleTabFieldsetAttributes() {
     this.tabFieldsetTargets.forEach((tabFieldset) => {
       const tabFieldsetVisible = tabFieldset.classList.contains('active');
-      console.log(tabFieldset, tabFieldsetVisible);
       tabFieldset.disabled = !tabFieldsetVisible;
       const submitButton = tabFieldset.querySelector('input[type="submit"], input[type="button"]');
       submitButton.type = tabFieldsetVisible ? 'submit' : 'button';

@@ -47,5 +47,5 @@ generate_asset_panel('CSS', 'CSS',
 generate_asset_panel('JS', 'JS',
                      %w[
                        app/javascript/controllers/{base_name}_controller.js
-                       app/javascript/controllers/{base_name}.js
+                       app/javascript/components/{base_name}.js
                      ])
