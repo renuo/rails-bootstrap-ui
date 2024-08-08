@@ -1,0 +1,30 @@
+.avatar {
+  --avatar-size: 50px;
+  --avatar-opacity: 0.5;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  transition: opacity .5s cubic-bezier(.4,0,.2,1);
+
+  &.disabled {
+    opacity: var(--avatar-opacity);
+  }
+
+  .bordered {
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px, rgb(212, 212, 216) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px
+  }
+
+  img {
+    @extend .img-fluid, .h-100;
+    border-radius: 50%;
+  }
+
+  span {
+    @extend .img-fluid, .h-100;
+    @extend .d-flex, .align-items-center, .justify-content-center;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    background-color: rgb(212, 212, 216);
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+  }
+}
