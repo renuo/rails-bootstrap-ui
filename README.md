@@ -1,6 +1,8 @@
 # Rails Bootstrap UI
 
-A full set of components for Ruby On Rails, based on Bootstrap.
+This is the source code of railsbootstrapui.com. 
+
+Rails Bootstrap UI is a UI framework for Ruby On Rails, based on Bootstrap.
 
 What does this library do:
 * Edits some default Bootstrap variables to make all bootstrap components look a bit more modern.
