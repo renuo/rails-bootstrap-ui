@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   root to: redirect('/lookbook')
 
   get :lazy_modal_content, to: 'modals#lazy_modal_content'
+  resources :countries, only: %i[index]
 end
