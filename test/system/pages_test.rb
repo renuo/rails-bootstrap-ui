@@ -120,4 +120,16 @@ class PagesTest < ApplicationSystemTestCase
     click_button('Dangerous Action')
     assert_selector 'button', text: 'Confirm'
   end
+
+  test 'visit the modal default page' do
+    visit_preview_page('modal/default')
+
+    assert_selector 'div.modal', visible: false
+  end
+
+  test 'visit the modal lazy load page' do
+    visit_preview_page('modal/lazy_load')
+
+    assert_selector 'div.modal', visible: false
+  end
 end

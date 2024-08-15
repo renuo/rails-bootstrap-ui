@@ -1,0 +1,11 @@
+<h4 class="my-3">Modal with lazy-loaded content</h4>
+
+<div class="alert alert-info" role="alert">
+  This modal uses a Turbo Frame to lazy-load its content. This is very helpful if loading the content is expensive and you don't always need it.
+  With this approach, the content is only loaded when the modal is opened and is cached for future use.
+</div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lazy-modal">
+  Launch lazy modal
+</button>
+
+<%= render 'components/modals/lazy_modal' %>
