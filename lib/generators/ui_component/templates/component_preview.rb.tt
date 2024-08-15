@@ -1,0 +1,10 @@
+# frozen_literal_string: true
+
+class <%= class_name %>ComponentPreview < Lookbook::Preview
+  include LookbookHelper
+
+  # @source ../../../app/views/components/<%= plural_name %>/_themes.html.erb
+  def themes
+    render 'components/<%= plural_name %>/themes'
+  end
+end
