@@ -1,0 +1,63 @@
+<div class="alert alert-info">
+  The autocomplete endpoint must return a JSON array in the format <code>[{ value: 'CH', label: 'Switzerland' }, ...]</code>.<br>
+  The <code>value</code> key is used to fill the input field and the <code>label</code> key is used to display the results.
+</div>
+<div class="mb-3"
+     data-controller="autocomplete"
+     data-autocomplete-url-value="<%= main_app.countries_path %>">
+  <label for="example-autocomplete" class="form-label">Country</label>
+  <input class="form-control"
+         id="example-autocomplete"
+         placeholder="Start typing a country name"
+         data-autocomplete-target="input">
+</div>
+
+<hr>
+
+<div class="alert alert-info">
+  You can decide which attribute is used to display the values and which one is used to fill the input field.
+</div>
+
+<div class="mb-3"
+     data-controller="autocomplete"
+     data-autocomplete-url-value="<%= main_app.countries_path %>"
+     data-autocomplete-input-param-value="label">
+  <label for="example-autocomplete" class="form-label">Country</label>
+  <input class="form-control"
+         id="example-autocomplete"
+         placeholder="Start typing a country name"
+         data-autocomplete-target="input">
+</div>
+
+<hr>
+
+<div class="alert alert-info">
+  You can also have a separate field for the value. Usually hidden.
+</div>
+
+<div class="row mb-3"
+     data-controller="autocomplete"
+     data-autocomplete-url-value="<%= main_app.countries_path %>">
+  <div class="col-6">
+  <label for="example-autocomplete" class="form-label">Country name</label>
+  <input class="form-control"
+         id="example-autocomplete"
+         placeholder="Start typing a country name"
+         data-autocomplete-target="input">
+  </div>
+  <div class="col-6">
+  <label for="hidden-autocomplete" class="form-label">Country ISO</label>
+  <input class="form-control"
+         id="hidden-autocomplete"
+         placeholder="This field would probably be hidden"
+         data-autocomplete-target="hidden">
+  </div>
+</div>
+
+<hr>
+
+<div class="alert alert-info">
+  We took inspiration and code from
+  <a href="https://github.com/afcapel/stimulus-autocomplete" target="_blank">afcapel/stimulus-autocomplete</a>
+  to create this component.
+</div>

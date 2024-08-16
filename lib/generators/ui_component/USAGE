@@ -1,0 +1,8 @@
+Description:
+    Generates all necessary files to start coding your new UI component.
+
+Example:
+    bin/rails generate ui_component modal
+
+    This will create al necessary files to start coding a modal component.
+

@@ -51,6 +51,7 @@ We have no idea yet. We are still working on this.
 
 Bug reports and pull requests are very much welcome. Please check our [plan](https://github.com/orgs/renuo/projects/7) to see what components we would like to add.
 
+If you want to add a new component, run `bin/rails g ui_component my_component_name` and follow the instructions.
 
 ## Development
 
