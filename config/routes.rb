@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   mount Lookbook::Engine, at: '/lookbook'
 
   root to: redirect('/lookbook')
+
+  get :lazy_modal_content, to: 'modals#lazy_modal_content'
 end
