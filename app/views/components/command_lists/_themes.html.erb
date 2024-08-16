@@ -1,0 +1,75 @@
+<div class="alert alert-warning">
+  Since this page is an iframe, you need to click here first, and then press the shortcut.
+</div>
+<%
+
+  command_list_actions = [
+    { label: 'Search on Google',
+      command: 'https://www.google.com/search?q=_1_',
+      placeholder: 'Search text',
+      category: 'search',
+      target: '_blank' },
+    { label: 'Go to component',
+      command: '/lookbook/inspect/_1_/themes',
+      placeholder: 'badge, button, avatar, etc.',
+      category: 'link' },
+  ].group_by { |action| action[:category] }
+
+%>
+<div data-controller="command-list" class="command-list">
+  <a href="#" class="nav-item me-3 p-1 text-decoration-none">
+    <div class="input-group command-list-button ms-2" data-bs-toggle="modal" data-bs-target="#command-list-modal">
+      <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+      <div class="form-control form-control-sm text-center py-2">
+        <%= t('command_list.press') %>
+        <kbd class="command-list-icon" data-command-list-target="metaKey"></kbd> + <kbd class="command-list-icon">K</kbd>
+      </div>
+    </div>
+  </a>
+
+  <div id="command-list-modal" class="modal" tabindex="-1" data-command-list-target="list">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+            <input autocomplete="off"
+                   type="text"
+                   class="form-control"
+                   data-command-list-target="searchField"
+                   data-action="keydown.up->command-list#previousItem
+                                keydown.enter->command-list#performCommand
+                                keydown.down->command-list#nextItem">
+          </div>
+
+          <div class="list-group" data-command-list-target="listGroup">
+            <% command_list_actions.each do |category, actions| %>
+              <div class="form-label mt-2 fw-medium"><%= t("command_list.#{category}") %></div>
+              <% actions.each do |action| %>
+                <a class="list-group-item" href="#"
+                   data-action="click->command-list#selectCommand"
+                   data-command-list-target="listItem"
+                   data-placeholder="<%= action[:placeholder] || '' %>"
+                   data-command="<%= action[:command] %>"
+                   data-target="<%= action[:target] || '' %>">
+                  <%= action[:label] %>
+                </a>
+              <% end %>
+            <% end %>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex command-list-footer">
+          <small class="pe-1"><kbd class="command-list-icon">⏎</kbd> <%= t('command_list.to_select') %></small>
+          <small class="pe-1">
+            <kbd class="command-list-icon">↑</kbd>
+            <kbd class="command-list-icon">↓</kbd>
+            <%= t('command_list.to_navigate') %>
+          </small>
+          <small class="pe-1"><kbd class="command-list-icon">ESC</kbd> <%= t('command_list.to_exit') %></small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

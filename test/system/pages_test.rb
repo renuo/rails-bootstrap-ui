@@ -121,6 +121,10 @@ class PagesTest < ApplicationSystemTestCase
     assert_selector 'button', text: 'Confirm'
   end
 
+  test 'visit the command_list page' do
+    visit_preview_page('command_list/themes')
+
+    assert_selector 'div.command-list'
   test 'visit the modal default page' do
     visit_preview_page('modal/default')
 
