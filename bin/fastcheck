@@ -23,3 +23,4 @@ echo "Executing: yarn eslint app/javascripts spec/javascripts"
 yarn eslint 'app/javascript/**/*.js'
 
 
+bin/rails zeitwerk:check
