@@ -238,6 +238,9 @@ export default class AutocompleteController extends Controller {
     const results = document.createElement("ul");
     results.classList.add("dropdown-menu");
     results.classList.add("autocomplete");
+    results.classList.add("animate__animated");
+    results.classList.add("animate__fadeIn");
+
     results.style.width = this.inputTarget.offsetWidth + "px";
     this.inputTarget.after(results);
     this.resultsContainer = results;
