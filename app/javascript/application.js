@@ -4,4 +4,4 @@ import 'controllers';
 import 'popper';
 import 'bootstrap';
 
-import './components/confirm_alert';
+import 'components/confirm_alert';
