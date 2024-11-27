@@ -1,5 +1,4 @@
 import { Controller } from '@hotwired/stimulus';
-import flatpickr from 'flatpickr';
 
 export default class FlatpickrController extends Controller {
   static targets = ['flatpickrDate', 'customFlatpickrDate', 'multipleFlatpickrDate', 'rangeFlatpickrDate'];

@@ -5,11 +5,9 @@ class FlatpickrComponentPreview < Lookbook::Preview
 
   # Add the following to your `application.html.erb` head:
   #
+  # `<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>`<br>
   # `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">`
   #
-  # Add the following to your `importmap.rb` file (or import using yarn or npm):
-  #
-  # `pin "flatpickr"`
   # @source ../../../app/views/components/flatpickr/_themes.html.erb
 
   def themes
