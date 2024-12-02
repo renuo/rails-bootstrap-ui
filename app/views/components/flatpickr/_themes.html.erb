@@ -1,41 +1,41 @@
 <div class="mt-3 col-md-6">
-  <%= form_for :appointment, data: { controller: 'flatpickr' } do |form| %>
+  <%= form_for :appointment do |form| %>
     <div class="my-3">
       <p class="my-1">Default HTML date input</p>
       <%= form.date_field :normal_date %>
     </div>
 
-    <div class="my-3">
+    <div class="my-3" data-controller="flatpickr">
       <p class="my-1">Default Flatpickr date input</p>
       <%= form.date_field :flatpickr_date,
                           data: {
-                            flatpickr_target: 'flatpickrDate'
+                            flatpickr_target: 'inputField'
                           } %>
     </div>
 
-    <div class="my-3">
+    <div class="my-3" data-controller="custom-flatpickr">
       <p class="my-1">Custom Flatpickr date input</p>
       <%= form.date_field :custom_flatpickr_date,
                           data: {
-                            flatpickr_target: 'customFlatpickrDate'
+                            custom_flatpickr_target: 'inputField'
                           },
                           placeholder: 'Select appointment date' %>
     </div>
 
-    <div class="my-3">
+    <div class="my-3" data-controller="multiple-flatpickr">
       <p class="my-1">Multiple select Flatpickr date input</p>
       <%= form.date_field :multiple_flatpickr_date,
                           data: {
-                            flatpickr_target: 'multipleFlatpickrDate'
+                            multiple_flatpickr_target: 'inputField'
                           },
                           placeholder: 'Select multiple dates' %>
     </div>
 
-    <div class="my-3">
+    <div class="my-3" data-controller="range-flatpickr">
       <p class="my-1">Range Flatpickr date input</p>
       <%= form.date_field :range_flatpickr_date,
                           data: {
-                            flatpickr_target: 'rangeFlatpickrDate'
+                            range_flatpickr_target: 'inputField'
                           },
                           placeholder: 'Select a range of dates' %>
     </div>
