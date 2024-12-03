@@ -5,37 +5,40 @@
       <%= form.date_field :normal_date %>
     </div>
 
-    <div class="my-3" data-controller="flatpickr">
+    <div class="my-3">
       <p class="my-1">Default Flatpickr date input</p>
       <%= form.date_field :flatpickr_date,
                           data: {
-                            flatpickr_target: 'inputField'
+                            controller: 'flatpickr'
                           } %>
     </div>
 
-    <div class="my-3" data-controller="custom-flatpickr">
+    <div class="my-3">
       <p class="my-1">Custom Flatpickr date input</p>
       <%= form.date_field :custom_flatpickr_date,
                           data: {
-                            custom_flatpickr_target: 'inputField'
+                            controller: 'flatpickr',
+                            flatpickr_type_value: 'custom'
                           },
                           placeholder: 'Select appointment date' %>
     </div>
 
-    <div class="my-3" data-controller="multiple-flatpickr">
+    <div class="my-3">
       <p class="my-1">Multiple select Flatpickr date input</p>
       <%= form.date_field :multiple_flatpickr_date,
                           data: {
-                            multiple_flatpickr_target: 'inputField'
+                            controller: 'flatpickr',
+                            flatpickr_type_value: 'multiple'
                           },
                           placeholder: 'Select multiple dates' %>
     </div>
 
-    <div class="my-3" data-controller="range-flatpickr">
+    <div class="my-3">
       <p class="my-1">Range Flatpickr date input</p>
       <%= form.date_field :range_flatpickr_date,
                           data: {
-                            range_flatpickr_target: 'inputField'
+                            controller: 'flatpickr',
+                            flatpickr_type_value: 'range'
                           },
                           placeholder: 'Select a range of dates' %>
     </div>
