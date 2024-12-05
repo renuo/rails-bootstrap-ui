@@ -1,0 +1,50 @@
+<div class="mt-3 col-md-6">
+  <%= form_for :appointment do |form| %>
+    <div class="my-3">
+      <p class="my-1">Default HTML date input</p>
+      <%= form.date_field :normal_date %>
+    </div>
+
+    <div class="my-3">
+      <p class="my-1">Default Flatpickr date input</p>
+      <%= form.date_field :flatpickr_date,
+                          data: {
+                            controller: 'flatpickr'
+                          } %>
+    </div>
+
+    <div class="my-3">
+      <p class="my-1">Custom Flatpickr date input</p>
+      <%= form.date_field :custom_flatpickr_date,
+                          data: {
+                            controller: 'flatpickr',
+                            flatpickr_type_value: 'custom'
+                          },
+                          placeholder: 'Select appointment date' %>
+    </div>
+
+    <div class="my-3">
+      <p class="my-1">Multiple select Flatpickr date input</p>
+      <%= form.date_field :multiple_flatpickr_date,
+                          data: {
+                            controller: 'flatpickr',
+                            flatpickr_type_value: 'multiple'
+                          },
+                          placeholder: 'Select multiple dates' %>
+    </div>
+
+    <div class="my-3">
+      <p class="my-1">Range Flatpickr date input</p>
+      <%= form.date_field :range_flatpickr_date,
+                          data: {
+                            controller: 'flatpickr',
+                            flatpickr_type_value: 'range'
+                          },
+                          placeholder: 'Select a range of dates' %>
+    </div>
+
+    <div class="my-3">
+      <%= form.submit 'Submit' %>
+    </div>
+  <% end %>
+</div>
