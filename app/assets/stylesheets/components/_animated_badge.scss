@@ -1,0 +1,23 @@
+.pulsating-badge {
+  animation-name: pulse;
+  animation-duration: var(--animation-duration, 1s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  padding: 2px 8px;
+  display: inline-flex;
+  border: 2px solid var(--border-color, black);
+  border-radius: 0.75rem;
+  margin: 0 16px 32px 0;
+
+  @keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    50% {
+      transform: scale3d(var(--pulse-scale, 1.05), var(--pulse-scale, 1.05), var(--pulse-scale, 1.05));
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
