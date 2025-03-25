@@ -6,10 +6,6 @@ Rails.application.config.lookbook.debug_menu = true
 
 Rails.application.config.lookbook.page_nav_filter = true
 
-Rails.application.config.lookbook.preview_display_options = {
-  theme: %w[light dark]
-}
-
 Rails.application.config.lookbook.ui_theme = 'green'
 
 Rails.application.config.lookbook.project_logo = Rails.root.join('app/assets/images/renuo_logo.svg').read
