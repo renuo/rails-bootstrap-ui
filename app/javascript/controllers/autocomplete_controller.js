@@ -31,7 +31,7 @@ export default class AutocompleteController extends Controller {
 
     this.mouseDown = false;
 
-    this.onInputChange = debounce(this.onInputChange, this.delayValue);
+    this.onInputChange = this.debounce(this.onInputChange, this.delayValue);
 
     this.inputTarget.addEventListener('keydown', this.onKeydown);
     this.inputTarget.addEventListener('blur', this.onInputBlur);

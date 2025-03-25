@@ -1,3 +1,10 @@
 .dropdown-menu.autocomplete {
   margin-top: 0.25rem;
+
+  .active {
+    background-color: blue;
+    .dropdown-item {
+      color: white;
+    }
+  }
 }
