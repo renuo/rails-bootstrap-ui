@@ -17,6 +17,7 @@ $alert-color: rgb(0 0 0 / 3%);
     animation: progress 5s ease-in-out forwards;
     background-color: $alert-color;
     content: '';
+    pointer-events: none;
     position: absolute;
   }
 
