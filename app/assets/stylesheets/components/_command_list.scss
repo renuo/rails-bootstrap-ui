@@ -1,0 +1,27 @@
+.command-list {
+  .command-list-button {
+    min-width: 170px;
+  }
+
+  .modal-dialog {
+    --bs-modal-width: 600px;
+    --bs-modal-margin: 5rem;
+    --bs-modal-padding: 1.5rem;
+  }
+
+  .list-group-item {
+    color: $navbar-light-color;
+
+    &.active {
+      color: white;
+    }
+  }
+
+  .command-list-footer {
+    color: $navbar-light-color;
+  }
+
+  .command-list-icon {
+    border: 1px outset $navbar-light-color;
+  }
+}
