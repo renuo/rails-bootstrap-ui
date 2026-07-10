@@ -125,6 +125,8 @@ class PagesTest < ApplicationSystemTestCase
     visit_preview_page('command_list/themes')
 
     assert_selector 'div.command-list'
+  end
+
   test 'visit the modal default page' do
     visit_preview_page('modal/default')
 
