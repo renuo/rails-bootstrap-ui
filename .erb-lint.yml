@@ -23,3 +23,5 @@ linters:
         Enabled: false
       Rails/OutputSafety:
         Enabled: false
+      Layout/LeadingEmptyLines:
+        Enabled: false

@@ -3,16 +3,16 @@
 </div>
 <%
 command_list_actions = [
-    { label: 'Search on Google',
-      command: 'https://www.google.com/search?q=_1_',
-      placeholder: 'Search text',
-      category: 'search',
-      target: '_blank' },
-    { label: 'Go to component',
-      command: '/lookbook/inspect/_1_/themes',
-      placeholder: 'badge, button, avatar, etc.',
-      category: 'link' }
-  ].group_by { |action| action[:category] }
+  { label: 'Search on Google',
+    command: 'https://www.google.com/search?q=_1_',
+    placeholder: 'Search text',
+    category: 'search',
+    target: '_blank' },
+  { label: 'Go to component',
+    command: '/lookbook/inspect/_1_/themes',
+    placeholder: 'badge, button, avatar, etc.',
+    category: 'link' }
+].group_by { |action| action[:category] }
 %>
 <div data-controller="command-list" class="command-list">
   <a href="#" class="nav-item me-3 p-1 text-decoration-none">
