@@ -17,6 +17,6 @@ blocks:
         - name: main-deploy
           commands:
             - checkout --use-cache
-            - heroku git:remote -a $HEROKU_APP_NAME
-            - git push heroku -f $SEMAPHORE_GIT_BRANCH:master
-            - if heroku run -x rails db:migrate; then heroku dyno:restart; else heroku rollback; exit -1; fi
+            - git remote add dokku ssh://dokku@$DOKKU_SERVER_IP:22/$DOKKU_APP_NAME
+            - chmod 600 /home/semaphore/.ssh/hetzner-github.key
+            - GIT_SSH_COMMAND="ssh -i /home/semaphore/.ssh/hetzner-github.key -o StrictHostKeyChecking=no" git push dokku -f $SEMAPHORE_GIT_BRANCH:main
