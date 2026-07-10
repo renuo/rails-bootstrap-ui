@@ -1,6 +1,6 @@
 # Rails Bootstrap UI
 
-This is the source code of railsbootstrapui.com. 
+This is the source code of railsbootstrapui.com.
 
 Rails Bootstrap UI is a UI framework for Ruby On Rails, based on Bootstrap.
 
