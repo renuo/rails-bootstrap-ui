@@ -9,10 +9,7 @@ blocks:
   - name: main-deploy
     task:
       secrets:
-        - name: heroku-http
-      env_vars:
-        - name: HEROKU_APP_NAME
-          value: rails-bootstrap-ui-main
+        - name: rails-bootstrap-ui
       jobs:
         - name: main-deploy
           commands:
