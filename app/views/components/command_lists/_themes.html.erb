@@ -1,9 +1,7 @@
 <div class="alert alert-warning">
   Since this page is an iframe, you need to click here first, and then press the shortcut.
 </div>
-<%
-
-  command_list_actions = [
+command_list_actions = [
     { label: 'Search on Google',
       command: 'https://www.google.com/search?q=_1_',
       placeholder: 'Search text',
@@ -12,9 +10,8 @@
     { label: 'Go to component',
       command: '/lookbook/inspect/_1_/themes',
       placeholder: 'badge, button, avatar, etc.',
-      category: 'link' },
+      category: 'link' }
   ].group_by { |action| action[:category] }
-
 %>
 <div data-controller="command-list" class="command-list">
   <a href="#" class="nav-item me-3 p-1 text-decoration-none">
